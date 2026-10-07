@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reps.ct.ws - best nz 1:1 reps</title>
+  <meta name="description" content="best larp airpods replicas. 1:1 uncalloutable audio.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'><path d='M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-0.91.04-2.04.62-2.69 1.38-.58.67-.99 1.74-.86 2.78 1.02.08 2.04-.54 2.63-1.29z'/></svg>">
+  <style>
+    .selection-step {
+      display: none;
+      text-align: center;
+      margin: 60px 0;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .selection-step.active {
+      display: block;
+    }
+
+    .btn-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 24px;
+    }
+
+    .opt-btn {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      color: #fff;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1.1rem;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .opt-btn:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .opt-btn:active {
+      transform: translateY(0);
+    }
+
+    .opt-btn span {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .opt-price-tag {
+      display: inline-block;
+      margin-top: 8px;
+      margin-bottom: 2px;
+      padding: 3px 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+      transition: all 0.2s ease;
+    }
+
+    .opt-btn:hover .opt-price-tag {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* lightbox modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+      animation: fadeIn 0.2s ease forwards;
+    }
+
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      cursor: pointer;
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 10;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 85vw;
+      max-height: 80vh;
+    }
+
+    .lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      user-select: none;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.08);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(18, 18, 20, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.2s ease;
+      z-index: 20;
+    }
+
+    .lightbox-prev {
+      left: -64px;
+    }
+
+    .lightbox-next {
+      right: -64px;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .lightbox-counter {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-prev {
+        left: 8px;
+        background: rgba(0, 0, 0, 0.7);
+      }
+      .lightbox-next {
+        right: 8px;
+        background: rgba(0, 0, 0, 0.7);
+      }
+      .lightbox-close {
+        top: -42px;
+        right: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- minimal navigation -->
+  <header class="minimal-nav">
+    <div class="nav-container">
+      <a href="./" class="brand-link" title="airreps store">
+        <svg width="15" height="18" viewBox="0 0 170 170">
+          <path
+            d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.7-7.85-12.01-14.42-6.53-10.02-11.75-21.2-15.65-33.54-3.9-12.34-5.85-23.75-5.85-34.22 0-14.77 3.8-26.65 11.41-35.63 7.6-8.98 17.1-13.62 28.5-13.91 4.67 0 9.87 1.18 15.6 3.53 5.73 2.35 9.4 3.59 11.01 3.73 2.01 0 6.01-1.39 12-4.17 5.99-2.78 11.13-4.04 15.42-3.79 11.63.78 20.89 5.09 27.78 12.93-9.98 6.09-14.86 14.54-14.65 25.35.21 8.87 3.63 16.27 10.26 22.19 6.63 5.92 14.44 9.17 23.43 9.75-2.35 6.94-5.13 14.07-8.33 21.39zM119.22 33.74c0-7.39 2.66-14.34 7.98-20.85 5.32-6.51 11.83-10.87 19.53-13.09.85 7.17-1.63 14.15-7.44 20.94-5.81 6.79-12.5 10.96-20.07 12.5z" />
+        </svg>
+        <span>airreps</span>
+      </a>
+      <div class="nav-right">
+        <span style="font-size:0.85rem; color:var(--text-muted);">instagram.com/pidi.mp3</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- STEP 1: SHAPE -->
+    <div id="step-shape" class="selection-step active">
+      <h1 class="hero-heading" style="font-size: 2.5rem; margin-bottom: 8px;">choose your model</h1>
+      <p class="hero-desc">pick the shape that fits your ears best.</p>
+
+      <div class="btn-grid">
+        <button class="opt-btn" onclick="selectShape('pro')">
+          <img src="assets/img/pro3.png" alt="Pro Model"
+            style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 16px; display: block;">
+          Apple AirPods Pro
+          <div class="opt-price-tag" id="price-shape-pro">$60 – $130 nzd</div>
+          <span>has rubber tips. seals out noise completely.</span>
+        </button>
+        <button class="opt-btn" onclick="selectShape('gen')">
+          <img src="assets/img/original4.png" alt="Gen Model"
+            style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 16px; display: block;">
+          Apple AirPods (Original)
+          <div class="opt-price-tag" id="price-shape-gen">$60 – $110 nzd</div>
+          <span>no rubber tips. sits gently in your ear.</span>
+        </button>
+        <button class="opt-btn" onclick="selectShape('max')">
+          <img src="assets/img/max.png" alt="Max Model"
+            style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 16px; display: block;">
+          Apple AirPods Max
+          <div class="opt-price-tag" id="price-shape-max">$180 – $230 nzd</div>
+          <span>big headphones. extreme aesthetic flex.</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: MODEL GENERATION -->
+    <div id="step-model" class="selection-step">
+      <button class="back-btn" onclick="goBack('step-shape')">← back to styles</button>
+      <h1 class="hero-heading" style="font-size: 2.5rem; margin-bottom: 8px;">choose your generation</h1>
+      <p class="hero-desc" id="model-desc">which generation do you want?</p>
+
+      <div class="btn-grid" id="model-grid">
+        <!-- populated by js -->
+      </div>
+    </div>
+
+    <!-- STEP 3: QUALITY -->
+    <div id="step-quality" class="selection-step">
+      <button class="back-btn" onclick="goBack('step-model')">← back to generations</button>
+      <h1 class="hero-heading" style="font-size: 2.5rem; margin-bottom: 8px;">pick your quality</h1>
+      <p class="hero-desc">from budget beaters to flawless 1:1 flagships.</p>
+
+      <div class="btn-grid" id="quality-grid">
+        <!-- populated by js -->
+      </div>
+    </div>
+
+    <!-- STEP 4: RESULT -->
+    <div id="step-result" class="selection-step">
+      <button class="back-btn" onclick="goBack('step-quality')">← back to quality</button>
+
+      <div
+        style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 40px 20px; max-width: 500px; margin: 0 auto;">
+        <h2 id="result-title" style="font-size: 1.5rem; margin-bottom: 8px;">your selection</h2>
+        <p id="result-desc" style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.9rem;"></p>
+
+        <div style="font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px;" id="result-price">$0
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 32px;">includes shipping to nz</p>
+
+        <a id="whatsapp-link" href="#" target="_blank" class="btn btn-whatsapp"
+          style="width: 100%; justify-content: center; padding: 16px; font-size: 1.1rem;">
+          order on whatsapp ↗
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- aesthetic gallery -->
+  <section class="section" id="gallery" style="border-top: 1px solid var(--border); margin-top: 60px;">
+    <div class="wrap">
+      <div class="section-top" style="text-align: center;">
+        <h2 class="section-title">pics</h2>
+      </div>
+      <div class="gallery-grid">
+        <img src="assets/AirPods%20aesthetic.jpg" alt="AirPods aesthetic" loading="lazy">
+        <img src="assets/air%20pods%20aesthetic.jpg" alt="air pods aesthetic" loading="lazy">
+        <img src="assets/AirPods%20pro2(1).jpg" alt="AirPods pro2" loading="lazy">
+        <img src="assets/airpods%20pro%202🤍.jpg" alt="airpods pro 2" loading="lazy">
+        <img src="assets/Pro2withPhone.jpg" alt="AirPods 2" loading="lazy">
+        <img src="assets/EsKIiaJx.jpg" alt="AirPods" loading="lazy">
+        <img src="assets/jas1Nngs.jpg" alt="AirPods" loading="lazy">
+        <img src="assets/I06GuZUI.jpg" alt="AirPods max" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- image lightbox modal -->
+  <div id="lightbox-modal" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="close">✕</button>
+      <button class="lightbox-nav lightbox-prev" onclick="changeLightboxImage(-1)" aria-label="previous image">‹</button>
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="maximized picture">
+      </div>
+      <button class="lightbox-nav lightbox-next" onclick="changeLightboxImage(1)" aria-label="next image">›</button>
+      <div class="lightbox-counter" id="lightbox-counter">1 / 8</div>
+    </div>
+  </div>
+
+  <footer class="minimal-footer"
+    style="padding: 40px 20px; text-align:center; border-top: 1px solid var(--border); margin-top: 40px;">
+    <p style="font-size:0.8rem; color:var(--text-muted);">© 2026 reps.ct.ws - all prices in nzd</p>
+  </footer>
+
+  <script>
+    // Logic: base_nzd = usd * 1.65
+    // total = Math.ceil((base_nzd + 18) / 10) * 10
+    function calcPrice(usd) {
+      const baseNzd = usd * 1.65;
+      return Math.ceil((baseNzd + 18) / 10) * 10;
+    }
+
+    const inventory = {
+      pro: {
+        title: "Apple AirPods Pro",
+        models: [
+          {
+            id: "pro2",
+            name: "AirPods Pro 2",
+            desc: "The classic Pro model with volume swipe controls.",
+            img: "assets/img/pro2.png",
+            qualities: [
+              { level: "good", title: "good (budget)", desc: "good noise cancelation and clean, punchy sound.", usd: 22, name: "budget pro 2" },
+              { level: "better", title: "better (mid-tier)", desc: "stronger noise canceling and punchy bass.", usd: 52, name: "mid-tier pro 2" },
+              { level: "best", title: "best (1:1 flagship)", desc: "flawless silence and premium features.", usd: 58, name: "flagship pro 2" }
+            ]
+          },
+          {
+            id: "pro3",
+            name: "AirPods Pro 3",
+            desc: "The newest Pro model with optical heart rate sensor.",
+            img: "assets/img/pro3.png",
+            qualities: [
+              { level: "good", title: "good (budget)", desc: "good noise cancelation and clean, punchy sound.", usd: 27, name: "budget pro 3" },
+              { level: "better", title: "better (mid-tier)", desc: "stronger noise canceling and punchy bass.", usd: 37, name: "mid-tier pro 3" },
+              { level: "best", title: "best (1:1 flagship)", desc: "flawless silence and latest features.", usd: 67, name: "flagship pro 3" }
+            ]
+          }
+        ]
+      },
+      gen: {
+        title: "Apple AirPods (Original)",
+        models: [
+          {
+            id: "gen2",
+            name: "AirPods 2",
+            desc: "The classic long stem design.",
+            img: "assets/img/original2.png",
+            qualities: [
+              { level: "good", title: "good (standard)", desc: "great daily audio.", usd: 24, name: "standard gen 2" },
+              { level: "best", title: "best (1:1 flagship)", desc: "perfect 1:1 classic fit.", usd: 26, name: "flagship gen 2" }
+            ]
+          },
+          {
+            id: "gen4",
+            name: "AirPods 4",
+            desc: "The latest open-ear model with ANC.",
+            img: "assets/img/original4.png",
+            qualities: [
+              { level: "good", title: "good (budget)", desc: "standard open-ear listening.", usd: 29, name: "budget gen 4" },
+              { level: "better", title: "better (mid-tier)", desc: "upgraded audio drivers.", usd: 42, name: "mid-tier gen 4" },
+              { level: "best", title: "best (1:1 flagship)", desc: "includes open-ear active noise cancellation.", usd: 52, name: "flagship gen 4" }
+            ]
+          }
+        ]
+      },
+      max: {
+        title: "Apple AirPods Max",
+        models: [
+          {
+            id: "max",
+            name: "AirPods Max",
+            desc: "Over-ear luxury headphones.",
+            img: "assets/img/max.png",
+            qualities: [
+              { level: "good", title: "good (plastic build)", desc: "looks the part, but made of plastic.", usd: 93, name: "plastic max" },
+              { level: "better", title: "better (standard metal)", desc: "real cold metal earcups.", usd: 112, name: "standard metal max" },
+              { level: "best", title: "best (1:1 flagship)", desc: "flawless 1:1 aluminium build.", usd: 126, name: "flagship metal max" }
+            ]
+          }
+        ]
+      }
+    };
+
+    let selectedShape = null;
+    let selectedModelId = null;
+
+    function showStep(id) {
+      document.querySelectorAll('.selection-step').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function goBack(id) {
+      showStep(id);
+    }
+
+    function getShapePriceRange(shapeKey) {
+      const shape = inventory[shapeKey];
+      if (!shape) return '';
+      let prices = [];
+      shape.models.forEach(model => {
+        model.qualities.forEach(q => {
+          prices.push(calcPrice(q.usd));
+        });
+      });
+      const min = Math.min(...prices);
+      const max = Math.max(...prices);
+      return min === max ? `$${min} nzd` : `$${min} – $${max} nzd`;
+    }
+
+    function getModelPriceRange(model) {
+      let prices = model.qualities.map(q => calcPrice(q.usd));
+      const min = Math.min(...prices);
+      const max = Math.max(...prices);
+      return min === max ? `$${min} nzd` : `$${min} – $${max} nzd`;
+    }
+
+    function initCategoryPrices() {
+      Object.keys(inventory).forEach(key => {
+        const el = document.getElementById(`price-shape-${key}`);
+        if (el) {
+          el.innerText = getShapePriceRange(key);
+        }
+      });
+    }
+
+    initCategoryPrices();
+
+    function selectShape(shapeKey) {
+      selectedShape = shapeKey;
+      const shapeData = inventory[shapeKey];
+
+      const grid = document.getElementById('model-grid');
+      grid.innerHTML = '';
+
+      shapeData.models.forEach(model => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        const priceRange = getModelPriceRange(model);
+        btn.innerHTML = `
+          <img src="${model.img}" alt="${model.name}" style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 16px; display: block;">
+          ${model.name}
+          <div class="opt-price-tag">${priceRange}</div>
+          <span>${model.desc}</span>
+        `;
+        btn.onclick = () => selectModel(model.id);
+        grid.appendChild(btn);
+      });
+
+      showStep('step-model');
+    }
+
+    function selectModel(modelId) {
+      selectedModelId = modelId;
+      const shapeData = inventory[selectedShape];
+      const modelData = shapeData.models.find(m => m.id === modelId);
+
+      const grid = document.getElementById('quality-grid');
+      grid.innerHTML = '';
+
+      modelData.qualities.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        if (item.level === 'best') btn.style.borderColor = 'rgba(37,211,102,0.5)';
+        const priceNzd = calcPrice(item.usd);
+
+        btn.innerHTML = `
+          ${item.title}
+          <div class="opt-price-tag">$${priceNzd} nzd</div>
+          <span>${item.desc}</span>
+        `;
+        // Pass modelName and item so we know both context
+        btn.onclick = () => selectQuality(modelData.name, item);
+        grid.appendChild(btn);
+      });
+
+      showStep('step-quality');
+    }
+
+    function selectQuality(modelName, item) {
+      const priceNzd = calcPrice(item.usd);
+
+      const fullTitle = `${modelName} - ${item.level.toUpperCase()}`;
+
+      document.getElementById('result-title').innerText = fullTitle;
+      document.getElementById('result-desc').innerText = item.desc;
+      document.getElementById('result-price').innerText = '$' + priceNzd;
+
+      const msg = encodeURIComponent(`ORDER: ${fullTitle} (${item.name}) for $${priceNzd} nzd.`);
+      document.getElementById('whatsapp-link').href = `https://wa.me/491789142763?text=${msg}`;
+
+      showStep('step-result');
+    }
+
+    // lightbox gallery logic
+    let galleryImages = [];
+    let currentImageIndex = 0;
+
+    function initGallery() {
+      const imgs = document.querySelectorAll('.gallery-grid img');
+      galleryImages = Array.from(imgs).map(img => img.src);
+      imgs.forEach((img, idx) => {
+        img.addEventListener('click', () => openLightbox(idx));
+      });
+    }
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      updateLightbox();
+      const modal = document.getElementById('lightbox-modal');
+      if (modal) {
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+      document.body.style.overflow = '';
+    }
+
+    function changeLightboxImage(direction) {
+      if (!galleryImages.length) return;
+      currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const imgEl = document.getElementById('lightbox-img');
+      const counterEl = document.getElementById('lightbox-counter');
+      if (imgEl && galleryImages[currentImageIndex]) {
+        imgEl.src = galleryImages[currentImageIndex];
+      }
+      if (counterEl) {
+        counterEl.innerText = `${currentImageIndex + 1} / ${galleryImages.length}`;
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('lightbox-modal');
+      if (!modal || !modal.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+      if (e.key === 'ArrowRight') changeLightboxImage(1);
+    });
+
+    initGallery();
+  </script>
+</body>
+
+</html>
