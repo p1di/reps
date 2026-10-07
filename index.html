@@ -281,13 +281,39 @@
         </svg>
         <span>airreps</span>
       </a>
-      <div class="nav-right">
+      <div class="nav-right" style="display: flex; gap: 14px; align-items: center;">
+        <button onclick="toggleQuizView()" id="nav-quiz-btn" style="color: var(--accent); font-size: 0.82rem; font-weight: 600; cursor: pointer; padding: 4px 12px; border-radius: var(--radius-pill); border: 1px solid rgba(41, 151, 255, 0.35); background: rgba(41, 151, 255, 0.08); transition: all 0.2s;">take the quiz 💡</button>
         <span style="font-size:0.85rem; color:var(--text-muted);">instagram.com/pidi.mp3</span>
       </div>
     </div>
   </header>
 
   <div class="wrap">
+
+    <!-- QUIZ BANNER & SECTION -->
+    <div id="quiz-banner" style="text-align: center; margin: 24px 0 10px;">
+      <button onclick="openQuiz()" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); padding: 8px 18px; border-radius: var(--radius-pill); font-size: 0.85rem; color: #fff; cursor: pointer; transition: all 0.2s;">
+        <span>🎧 not sure which airpods replica to get?</span>
+        <span style="color: var(--accent); font-weight: 700;">take the quiz &rarr;</span>
+      </button>
+    </div>
+
+    <!-- QUIZ COMPONENT -->
+    <div id="quiz-section" style="display: none; margin: 24px 0 40px;">
+      <div class="quiz-shell">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div class="quiz-step-label" id="quiz-step-label">step 1 of 4</div>
+          <button onclick="closeQuiz()" style="color: var(--text-muted); font-size: 0.8rem; cursor: pointer;">✕ close quiz</button>
+        </div>
+        <div class="quiz-progress">
+          <span id="quiz-progress-bar" style="width: 25%;"></span>
+        </div>
+
+        <div id="quiz-card" class="quiz-anim">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
 
     <!-- STEP 1: SHAPE -->
     <div id="step-shape" class="selection-step active">
@@ -649,6 +675,362 @@
     });
 
     initGallery();
+
+    // --- AIRREPS QUIZ LOGIC ---
+    const quizQuestions = [
+      {
+        id: 'formFactor',
+        question: 'what style are you looking for?',
+        hint: 'choose the shape and fit that works best for your ears.',
+        options: [
+          { value: 'in-ear', emoji: '🎧', label: 'in-ear (sealed fit)', desc: 'like airpods pro — rubber ear tips, best sound isolation & anc' },
+          { value: 'open-fit', emoji: '👂', label: 'open-fit (no seal)', desc: 'like airpods 4 or 2 — sits gently in your ear, natural feel' },
+          { value: 'over-ear', emoji: '🎧', label: 'over-ear headphones', desc: 'like airpods max — premium full-size metal flex' }
+        ]
+      },
+      {
+        id: 'device',
+        question: 'what will you primarily use them with?',
+        hint: 'apple devices get automatic popups and icloud sync.',
+        options: [
+          { value: 'iphone', emoji: '📱', label: 'iphone / ipad', desc: 'ios devices only' },
+          { value: 'mac', emoji: '💻', label: 'mac (macos)', desc: 'macbook, imac, mac mini' },
+          { value: 'apple-mix', emoji: '🍏', label: 'multiple apple devices', desc: 'iphone + mac, want seamless switching' },
+          { value: 'other', emoji: '🤖', label: 'windows / android', desc: 'non-apple or multi-platform use' }
+        ]
+      },
+      {
+        id: 'useCase',
+        condition: (ans) => ans.formFactor === 'in-ear',
+        question: 'what will you mainly use them for?',
+        hint: 'different chipsets excel at anc, microphones, or battery.',
+        options: [
+          { value: 'commute', emoji: '🚆', label: 'commute / travel', desc: 'transparency mode & strong anc for transit noise' },
+          { value: 'gym', emoji: '🏃', label: 'gym / sports', desc: 'sweatproof, durable, secure fit during workouts' },
+          { value: 'calls', emoji: '📞', label: 'phone calls / meetings', desc: 'best microphone quality & background noise reduction' },
+          { value: 'casual', emoji: '🎵', label: 'casual listening', desc: 'all-around everyday music and podcasts' }
+        ]
+      },
+      {
+        id: 'priority',
+        question: 'what matters most to you?',
+        hint: 'pick the single most important factor.',
+        options: [
+          { value: 'anc', emoji: '🤫', label: 'best noise cancelling', desc: 'block out as much background noise as possible' },
+          { value: 'features', emoji: '✨', label: 'most features', desc: 'icloud connect, spatial audio, head tracking & swipe volume' },
+          { value: 'stable', emoji: '🛡️', label: 'most stable & proven', desc: 'reliable community favorite with zero bugs' },
+          { value: 'latest', emoji: '⚡', label: 'latest & newest', desc: 'newest design, latest generation — airpods pro 3 look' },
+          { value: 'budget', emoji: '💰', label: 'best value', desc: 'solid quality and great sound without spending too much' }
+        ]
+      }
+    ];
+
+    let quizAnswers = {};
+    let quizStep = 0;
+
+    function getActiveQuizQuestions() {
+      return quizQuestions.filter(q => !q.condition || q.condition(quizAnswers));
+    }
+
+    function openQuiz() {
+      const sec = document.getElementById('quiz-section');
+      if (!sec) return;
+      sec.style.display = 'block';
+      quizStep = 0;
+      quizAnswers = {};
+      renderQuizStep();
+      sec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeQuiz() {
+      const sec = document.getElementById('quiz-section');
+      if (sec) sec.style.display = 'none';
+    }
+
+    function toggleQuizView() {
+      const sec = document.getElementById('quiz-section');
+      if (!sec) return;
+      if (sec.style.display === 'none' || !sec.style.display) {
+        openQuiz();
+      } else {
+        closeQuiz();
+      }
+    }
+
+    function answerQuiz(questionId, value) {
+      quizAnswers[questionId] = value;
+      quizStep++;
+      renderQuizStep();
+    }
+
+    function quizBack() {
+      if (quizStep > 0) {
+        quizStep--;
+        const active = getActiveQuizQuestions();
+        const curQ = active[quizStep];
+        if (curQ) delete quizAnswers[curQ.id];
+        renderQuizStep();
+      }
+    }
+
+    function renderQuizStep() {
+      const active = getActiveQuizQuestions();
+      const card = document.getElementById('quiz-card');
+      const progressBar = document.getElementById('quiz-progress-bar');
+      const stepLabel = document.getElementById('quiz-step-label');
+      if (!card) return;
+
+      if (quizStep >= active.length) {
+        if (stepLabel) stepLabel.innerText = 'your recommendation';
+        if (progressBar) progressBar.style.width = '100%';
+        renderQuizResult();
+        return;
+      }
+
+      const q = active[quizStep];
+      if (stepLabel) stepLabel.innerText = `step ${quizStep + 1} of ${active.length}`;
+      if (progressBar) progressBar.style.width = `${((quizStep + 1) / active.length) * 100}%`;
+
+      let html = `
+        <div class="quiz-question">${q.question}</div>
+        <div class="quiz-hint">${q.hint}</div>
+        <div class="quiz-options">
+      `;
+
+      q.options.forEach(opt => {
+        html += `
+          <button class="quiz-option" onclick="answerQuiz('${q.id}', '${opt.value}')">
+            <span class="qo-emoji">${opt.emoji}</span>
+            <div>
+              <div>${opt.label}</div>
+              <small>${opt.desc}</small>
+            </div>
+          </button>
+        `;
+      });
+
+      html += `</div>`;
+
+      if (quizStep > 0) {
+        html += `<button class="quiz-back" onclick="quizBack()">← back</button>`;
+      }
+
+      card.className = 'quiz-anim';
+      card.innerHTML = html;
+    }
+
+    function renderQuizResult() {
+      const card = document.getElementById('quiz-card');
+      if (!card) return;
+      const { formFactor, device, priority, useCase } = quizAnswers;
+      const isMac = (device === 'mac' || device === 'apple-mix');
+
+      let rec = {
+        title: 'AirPods Pro 2 (1:1 Flagship)',
+        subtitle: 'best noise cancelling & proven stability',
+        shape: 'pro',
+        modelId: 'pro2',
+        qualityLevel: 'best',
+        price: calcPrice(58),
+        img: 'assets/img/pro2.png',
+        why: [
+          '34+ dB active noise cancelling & clean transparency mode',
+          '8 hour battery life on a single charge with usb-c case',
+          'full swipe volume control, precision lanyard loop & speaker chimes',
+          isMac ? 'seamless switching with macos & ios' : 'rock solid bluetooth connection with all devices'
+        ],
+        alts: [
+          { name: 'AirPods 4 (Open-Fit Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' },
+          { name: 'AirPods Max (Metal Flagship)', price: calcPrice(126), img: 'assets/img/max.png', shape: 'max', modelId: 'max' }
+        ]
+      };
+
+      if (formFactor === 'over-ear') {
+        if (priority === 'budget') {
+          rec = {
+            title: 'AirPods Max (Plastic Build)',
+            subtitle: 'budget over-ear with extreme aesthetic flex',
+            shape: 'max',
+            modelId: 'max',
+            qualityLevel: 'good',
+            price: calcPrice(93),
+            img: 'assets/img/max.png',
+            why: [
+              'full over-ear silhouette with working digital crown',
+              'plastic earcups keep the weight light and the cost accessible',
+              'solid daily audio & spatial audio'
+            ],
+            alts: [
+              { name: 'AirPods Max (Metal Flagship)', price: calcPrice(126), img: 'assets/img/max.png', shape: 'max', modelId: 'max' },
+              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
+            ]
+          };
+        } else {
+          rec = {
+            title: 'AirPods Max (1:1 Metal Flagship)',
+            subtitle: 'real cold aluminium earcups & heavy luxury feel',
+            shape: 'max',
+            modelId: 'max',
+            qualityLevel: 'best',
+            price: calcPrice(126),
+            img: 'assets/img/max.png',
+            why: [
+              'real cold metal aluminium earcups with genuine weight',
+              'breathable knit mesh canopy headband & memory foam ear cushions',
+              'hybrid active noise cancellation & dynamic spatial audio',
+              '~50 hours battery life between charges'
+            ],
+            alts: [
+              { name: 'AirPods Max (Plastic Budget)', price: calcPrice(93), img: 'assets/img/max.png', shape: 'max', modelId: 'max' },
+              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
+            ]
+          };
+        }
+      } else if (formFactor === 'open-fit') {
+        if (priority === 'budget') {
+          rec = {
+            title: 'AirPods 2 (Standard Classic)',
+            subtitle: 'the classic lightweight daily driver',
+            shape: 'gen',
+            modelId: 'gen2',
+            qualityLevel: 'good',
+            price: calcPrice(24),
+            img: 'assets/img/original2.png',
+            why: [
+              'ultra affordable classic stem design that rests comfortably in ear',
+              'zero ear fatigue — perfect for all-day wearing & calls',
+              'instant pairing with iphone & long-lasting battery'
+            ],
+            alts: [
+              { name: 'AirPods 4 (1:1 Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' },
+              { name: 'AirPods Pro 2 (Budget Good)', price: calcPrice(22), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
+            ]
+          };
+        } else {
+          rec = {
+            title: 'AirPods 4 (1:1 Flagship ANC)',
+            subtitle: 'latest open-ear design with active noise cancellation',
+            shape: 'gen',
+            modelId: 'gen4',
+            qualityLevel: 'best',
+            price: calcPrice(52),
+            img: 'assets/img/original4.png',
+            why: [
+              'newest compact acoustic shape fits securely without rubber tips',
+              'includes active noise cancellation in an open-ear design',
+              'usb-c wireless charging case with speaker chime',
+              'adaptive audio & personalized spatial audio'
+            ],
+            alts: [
+              { name: 'AirPods 2 (Classic)', price: calcPrice(24), img: 'assets/img/original2.png', shape: 'gen', modelId: 'gen2' },
+              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
+            ]
+          };
+        }
+      } else {
+        // In-ear
+        if (priority === 'latest') {
+          rec = {
+            title: 'AirPods Pro 3 (1:1 Flagship)',
+            subtitle: 'newest pro design with optical sensor & ultra-modern look',
+            shape: 'pro',
+            modelId: 'pro3',
+            qualityLevel: 'best',
+            price: calcPrice(67),
+            img: 'assets/img/pro3.png',
+            why: [
+              'brand new AirPods Pro 3 form factor with 1:1 hinge finish',
+              'optical heart rate sensor simulation & latest gesture controls',
+              'strong active noise cancelling & dynamic low latency audio'
+            ],
+            alts: [
+              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' },
+              { name: 'AirPods 4 (1:1 Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' }
+            ]
+          };
+        } else if (priority === 'budget') {
+          rec = {
+            title: 'AirPods Pro 2 (Budget Good)',
+            subtitle: 'good noise cancelation & clean punchy sound at lowest cost',
+            shape: 'pro',
+            modelId: 'pro2',
+            qualityLevel: 'good',
+            price: calcPrice(22),
+            img: 'assets/img/pro2.png',
+            why: [
+              'good noise cancelation & solid bass for just $' + calcPrice(22) + ' nzd',
+              'rubber silicone tips seal out room ambience',
+              'unbeatable price-to-performance entry point'
+            ],
+            alts: [
+              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' },
+              { name: 'AirPods 2 (Classic)', price: calcPrice(24), img: 'assets/img/original2.png', shape: 'gen', modelId: 'gen2' }
+            ]
+          };
+        }
+      }
+
+      const orderMsg = encodeURIComponent(`ORDER: ${rec.title} for $${rec.price} nzd (recommended from quiz).`);
+      const waUrl = `https://wa.me/491789142763?text=${orderMsg}`;
+
+      let whyList = rec.why.map(w => `<li>✓ ${w}</li>`).join('');
+      let altsHtml = rec.alts.map(alt => `
+        <div class="quiz-alt" style="cursor:pointer;" onclick="selectQuizRec('${alt.shape}', '${alt.modelId}', 'best')">
+          <img src="${alt.img}" alt="${alt.name}">
+          <div>
+            <div style="font-weight:600;">${alt.name}</div>
+            <span style="color:var(--text-muted); font-size:0.75rem;">$${alt.price} nzd</span>
+          </div>
+        </div>
+      `).join('');
+
+      card.className = 'quiz-anim';
+      card.innerHTML = `
+        <div class="quiz-result">
+          <div class="quiz-result-img">
+            <img src="${rec.img}" alt="${rec.title}">
+          </div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--accent); font-weight:700; letter-spacing:0.05em; margin-bottom:4px;">our pick for you</div>
+            <h3>${rec.title}</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:8px;">${rec.subtitle}</p>
+            <div style="font-size:2rem; font-weight:800; margin-bottom:12px;">$${rec.price} <span style="font-size:0.85rem; font-weight:400; color:var(--text-muted);">nzd shipped</span></div>
+
+            <ul class="quiz-why">
+              ${whyList}
+            </ul>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+              <a href="${waUrl}" target="_blank" class="btn btn-whatsapp" style="padding:12px 20px; font-size:0.95rem;">order on whatsapp ↗</a>
+              <button onclick="selectQuizRec('${rec.shape}', '${rec.modelId}', '${rec.qualityLevel}')" class="opt-btn" style="padding:12px 18px; font-size:0.9rem; margin:0;">choose in builder ↓</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-alts">
+          <div style="grid-column: 1 / -1; font-size:0.8rem; color:var(--text-muted); font-weight:600;">also consider:</div>
+          ${altsHtml}
+        </div>
+
+        <div style="text-align:center; margin-top:20px;">
+          <button class="quiz-back" onclick="openQuiz()" style="font-size:0.85rem;">↺ retake quiz</button>
+        </div>
+      `;
+    }
+
+    function selectQuizRec(shapeKey, modelId, qualityLevel) {
+      closeQuiz();
+      selectShape(shapeKey);
+      selectModel(modelId);
+      const shapeData = inventory[shapeKey];
+      const modelData = shapeData.models.find(m => m.id === modelId);
+      if (modelData) {
+        const item = modelData.qualities.find(q => q.level === qualityLevel) || modelData.qualities[modelData.qualities.length - 1];
+        selectQuality(modelData.name, item);
+      }
+      const res = document.getElementById('step-result');
+      if (res) res.scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 </body>
 
