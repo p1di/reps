@@ -3,1034 +3,1225 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>reps.ct.ws - best nz 1:1 reps</title>
   <meta name="description" content="best larp airpods replicas. 1:1 uncalloutable audio.">
+  <meta name="theme-color" content="#0a0a0b">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'><path d='M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-0.91.04-2.04.62-2.69 1.38-.58.67-.99 1.74-.86 2.78 1.02.08 2.04-.54 2.63-1.29z'/></svg>">
-  <style>
-    .selection-step {
-      display: none;
-      text-align: center;
-      margin: 60px 0;
-      animation: fadeIn 0.4s ease forwards;
-    }
-
-    .selection-step.active {
-      display: block;
-    }
-
-    .btn-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      margin-top: 24px;
-    }
-
-    .opt-btn {
-      background: var(--bg-card);
-      border: 2px solid var(--border);
-      color: #fff;
-      padding: 24px;
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      transition: all 0.2s;
-      font-size: 1.1rem;
-      font-weight: 600;
-      outline: none;
-    }
-
-    .opt-btn:hover {
-      border-color: rgba(255, 255, 255, 0.5);
-      transform: translateY(-2px);
-    }
-
-    .opt-btn:active {
-      transform: translateY(0);
-    }
-
-    .opt-btn span {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: var(--text-muted);
-      margin-top: 8px;
-      line-height: 1.4;
-    }
-
-    .opt-price-tag {
-      display: inline-block;
-      margin-top: 8px;
-      margin-bottom: 2px;
-      padding: 3px 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: var(--radius-pill);
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.01em;
-      transition: all 0.2s ease;
-    }
-
-    .opt-btn:hover .opt-price-tag {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .back-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      cursor: pointer;
-      margin-bottom: 20px;
-      transition: color 0.2s;
-    }
-
-    .back-btn:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    /* gallery grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.03);
-      border-color: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    /* lightbox modal */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .lightbox.active {
-      display: flex;
-      animation: fadeIn 0.2s ease forwards;
-    }
-
-    .lightbox-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      cursor: pointer;
-    }
-
-    .lightbox-content {
-      position: relative;
-      z-index: 10;
-      max-width: 90vw;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-img-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 85vw;
-      max-height: 80vh;
-    }
-
-    .lightbox-img-wrap img {
-      max-width: 100%;
-      max-height: 80vh;
-      object-fit: contain;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-      user-select: none;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: -46px;
-      right: 0;
-      width: 38px;
-      height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      color: #fff;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .lightbox-close:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: scale(1.08);
-    }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(18, 18, 20, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 50%;
-      color: #fff;
-      font-size: 1.8rem;
-      font-weight: 300;
-      line-height: 1;
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      transition: all 0.2s ease;
-      z-index: 20;
-    }
-
-    .lightbox-prev {
-      left: -64px;
-    }
-
-    .lightbox-next {
-      right: -64px;
-    }
-
-    .lightbox-nav:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.5);
-      transform: translateY(-50%) scale(1.08);
-    }
-
-    .lightbox-counter {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-    }
-
-    @media (max-width: 768px) {
-      .lightbox-prev {
-        left: 8px;
-        background: rgba(0, 0, 0, 0.7);
-      }
-      .lightbox-next {
-        right: 8px;
-        background: rgba(0, 0, 0, 0.7);
-      }
-      .lightbox-close {
-        top: -42px;
-        right: 4px;
-      }
-    }
-  </style>
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'><path d='M18.71 19.5c-.83 1.24-1.71 2.450-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.310.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.970 6.37c.61-.75 1.04-1.8 0.92-2.87-0.91.04-2.04.62-2.69 1.380-.58.67-.99 1.74-.86 2.78 1.02.08 2.04-.54 2.63-1.29z'/></svg>">
 </head>
 
 <body>
 
-  <!-- minimal navigation -->
-  <header class="minimal-nav">
-    <div class="nav-container">
-      <a href="./" class="brand-link" title="airreps store">
-        <svg width="15" height="18" viewBox="0 0 170 170">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="./" class="brand" title="airreps store">
+        <svg width="14" height="17" viewBox="0 0 170 170" aria-hidden="true">
           <path
-            d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.7-7.85-12.01-14.42-6.53-10.02-11.75-21.2-15.65-33.54-3.9-12.34-5.85-23.75-5.85-34.22 0-14.77 3.8-26.65 11.41-35.63 7.6-8.98 17.1-13.62 28.5-13.91 4.67 0 9.87 1.18 15.6 3.53 5.73 2.35 9.4 3.59 11.01 3.73 2.01 0 6.01-1.39 12-4.17 5.99-2.78 11.13-4.04 15.42-3.79 11.63.78 20.89 5.09 27.78 12.93-9.98 6.09-14.86 14.54-14.65 25.35.21 8.87 3.63 16.27 10.26 22.19 6.63 5.92 14.44 9.17 23.43 9.75-2.35 6.94-5.13 14.07-8.33 21.39zM119.22 33.74c0-7.39 2.66-14.34 7.98-20.85 5.32-6.51 11.83-10.87 19.53-13.09.85 7.17-1.63 14.15-7.44 20.94-5.81 6.79-12.5 10.96-20.07 12.5z" />
+            d="M150.37 130.25c-2.45 5.66-5.350 10.87-8.71 15.66-4.580 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.7-7.85-12.010-14.42-6.53-10.02-11.75-21.2-15.65-33.54-3.9-12.34-5.85-23.75-5.85-34.22 0-14.77 3.8-26.65 11.41-35.63 7.6-8.98 17.1-13.62 28.5-13.91 4.67 0 9.87 1.18 15.6 3.53 5.73 2.35 9.4 3.59 11.01 3.73 2.01 0 6.01-1.39 12-4.17 5.99-2.78 11.13-4.04 15.42-3.79 11.63.78 20.89 5.09 27.78 12.93-9.98 6.09-14.86 14.54-14.65 25.35.21 8.87 3.63 16.27 10.26 22.19 6.63 5.92 14.44 9.17 23.43 9.75-2.35 6.94-5.13 14.07-8.33 21.39zM119.22 33.74c0-7.39 2.66-14.34 7.98-20.85 5.32-6.51 11.83-10.87 19.53-13.090.85 7.17-1.63 14.15-7.44 20.94-5.81 6.79-12.5 10.96-20.07 12.5z" />
         </svg>
         <span>airreps</span>
       </a>
-      <div class="nav-right" style="display: flex; gap: 14px; align-items: center;">
-        <button onclick="toggleQuizView()" id="nav-quiz-btn" style="color: var(--accent); font-size: 0.82rem; font-weight: 600; cursor: pointer; padding: 4px 12px; border-radius: var(--radius-pill); border: 1px solid rgba(41, 151, 255, 0.35); background: rgba(41, 151, 255, 0.08); transition: all 0.2s;">take the quiz 💡</button>
-        <span style="font-size:0.85rem; color:var(--text-muted);">instagram.com/pidi.mp3</span>
-      </div>
+      <nav class="header-actions" aria-label="primary">
+        <button type="button" class="header-link" id="nav-quiz-btn" aria-expanded="false"
+          aria-controls="quiz-section">quiz</button>
+        <a class="header-link" href="https://instagram.com/pidi.mp3" target="_blank" rel="noopener"
+          aria-label="instagram @pidi.mp3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+          <span class="hide-sm">@pidi.mp3</span>
+        </a>
+      </nav>
     </div>
   </header>
 
-  <div class="wrap">
+  <main class="wrap">
 
-    <!-- QUIZ BANNER & SECTION -->
-    <div id="quiz-banner" style="text-align: center; margin: 24px 0 10px;">
-      <button onclick="openQuiz()" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); padding: 8px 18px; border-radius: var(--radius-pill); font-size: 0.85rem; color: #fff; cursor: pointer; transition: all 0.2s;">
-        <span>🎧 not sure which airpods replica to get?</span>
-        <span style="color: var(--accent); font-weight: 700;">take the quiz &rarr;</span>
-      </button>
-    </div>
-
-    <!-- QUIZ COMPONENT -->
-    <div id="quiz-section" style="display: none; margin: 24px 0 40px;">
-      <div class="quiz-shell">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <div class="quiz-step-label" id="quiz-step-label">step 1 of 4</div>
-          <button onclick="closeQuiz()" style="color: var(--text-muted); font-size: 0.8rem; cursor: pointer;">✕ close quiz</button>
-        </div>
-        <div class="quiz-progress">
-          <span id="quiz-progress-bar" style="width: 25%;"></span>
-        </div>
-
-        <div id="quiz-card" class="quiz-anim">
-          <!-- Populated by JS -->
+    <!-- quiz entry -->
+    <div id="quiz-banner" class="collapsible">
+      <div class="quiz-banner-inner">
+        <div class="quiz-banner">
+          <div>
+            <strong class="quiz-banner-title">not sure which pair to get?</strong>
+            <span class="quiz-banner-sub">answer a few quick questions and we'll pick for you.</span>
+          </div>
+          <button type="button" class="btn btn-secondary" id="quiz-open-btn">
+            take the quiz
+            <svg class="i-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- STEP 1: SHAPE -->
-    <div id="step-shape" class="selection-step active">
-      <h1 class="hero-heading" style="font-size: 2.5rem; margin-bottom: 8px;">choose your model</h1>
-      <p class="hero-desc">pick the shape that fits your ears best.</p>
-
-      <div class="btn-grid">
-        <button class="opt-btn" onclick="selectShape('pro')">
-          <img src="assets/img/pro3.png" alt="Pro Model"
-            style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 16px; display: block;">
-          Apple AirPods Pro
-          <div class="opt-price-tag" id="price-shape-pro">$60 – $130 nzd</div>
-          <span>has rubber tips. seals out noise completely.</span>
-        </button>
-        <button class="opt-btn" onclick="selectShape('gen')">
-          <img src="assets/img/original4.png" alt="Gen Model"
-            style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 16px; display: block;">
-          Apple AirPods (Original)
-          <div class="opt-price-tag" id="price-shape-gen">$60 – $110 nzd</div>
-          <span>no rubber tips. sits gently in your ear.</span>
-        </button>
-        <button class="opt-btn" onclick="selectShape('max')">
-          <img src="assets/img/max.png" alt="Max Model"
-            style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 16px; display: block;">
-          Apple AirPods Max
-          <div class="opt-price-tag" id="price-shape-max">$180 – $230 nzd</div>
-          <span>big headphones. extreme aesthetic flex.</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- STEP 2: MODEL GENERATION -->
-    <div id="step-model" class="selection-step">
-      <button class="back-btn" onclick="goBack('step-shape')">← back to styles</button>
-      <h1 class="hero-heading" style="font-size: 2.5rem; margin-bottom: 8px;">choose your generation</h1>
-      <p class="hero-desc" id="model-desc">which generation do you want?</p>
-
-      <div class="btn-grid" id="model-grid">
-        <!-- populated by js -->
-      </div>
-    </div>
-
-    <!-- STEP 3: QUALITY -->
-    <div id="step-quality" class="selection-step">
-      <button class="back-btn" onclick="goBack('step-model')">← back to generations</button>
-      <h1 class="hero-heading" style="font-size: 2.5rem; margin-bottom: 8px;">pick your quality</h1>
-      <p class="hero-desc">from budget beaters to flawless 1:1 flagships.</p>
-
-      <div class="btn-grid" id="quality-grid">
-        <!-- populated by js -->
-      </div>
-    </div>
-
-    <!-- STEP 4: RESULT -->
-    <div id="step-result" class="selection-step">
-      <button class="back-btn" onclick="goBack('step-quality')">← back to quality</button>
-
-      <div
-        style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 40px 20px; max-width: 500px; margin: 0 auto;">
-        <h2 id="result-title" style="font-size: 1.5rem; margin-bottom: 8px;">your selection</h2>
-        <p id="result-desc" style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.9rem;"></p>
-
-        <div style="font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px;" id="result-price">$0
+    <!-- quiz -->
+    <section id="quiz-section" class="collapsible quiz" aria-label="product finder quiz" hidden>
+      <div class="quiz-inner">
+        <div class="quiz-shell">
+          <div class="quiz-top">
+            <span class="quiz-step-label" id="quiz-step-label" aria-live="polite">question 1 of 4</span>
+            <button type="button" class="icon-btn" id="quiz-close-btn" aria-label="close quiz">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6 6 18" />
+              </svg>
+            </button>
+          </div>
+          <div class="quiz-progress" aria-hidden="true"><span id="quiz-progress-bar"></span></div>
+          <div id="quiz-card"></div>
         </div>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 32px;">includes shipping to nz</p>
-
-        <a id="whatsapp-link" href="#" target="_blank" class="btn btn-whatsapp"
-          style="width: 100%; justify-content: center; padding: 16px; font-size: 1.1rem;">
-          order on whatsapp ↗
-        </a>
       </div>
+    </section>
+
+    <!-- builder -->
+    <div id="builder" class="builder">
+
+      <!-- step 1: shape -->
+      <section id="step-shape" class="step active">
+        <div class="step-head">
+          <p class="eyebrow">step 1 of 4</p>
+          <h1 class="step-title" tabindex="-1">choose your model</h1>
+          <p class="step-desc">pick the shape that fits your ears best.</p>
+        </div>
+
+        <div class="card-grid" data-stagger>
+          <button type="button" class="card card--product" data-shape="pro">
+            <span class="card-media"><img src="assets/img/pro3.png" alt="" decoding="async"></span>
+            <span class="card-body">
+              <span class="card-title">AirPods Pro</span>
+              <span class="card-desc">rubber tips. seals out noise completely.</span>
+              <span class="card-price" id="price-shape-pro">$60 – $130<small>nzd</small></span>
+            </span>
+            <span class="card-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 6l6 6-6 6" />
+              </svg></span>
+          </button>
+          <button type="button" class="card card--product" data-shape="gen">
+            <span class="card-media"><img src="assets/img/original4.png" alt="" decoding="async"></span>
+            <span class="card-body">
+              <span class="card-title">AirPods</span>
+              <span class="card-desc">no rubber tips. sits gently in your ear.</span>
+              <span class="card-price" id="price-shape-gen">$60 – $110<small>nzd</small></span>
+            </span>
+            <span class="card-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 6l6 6-6 6" />
+              </svg></span>
+          </button>
+          <button type="button" class="card card--product" data-shape="max">
+            <span class="card-media"><img src="assets/img/max.png" alt="" decoding="async"></span>
+            <span class="card-body">
+              <span class="card-title">AirPods Max</span>
+              <span class="card-desc">over-ear headphones. the full flex.</span>
+              <span class="card-price" id="price-shape-max">$180 – $230<small>nzd</small></span>
+            </span>
+            <span class="card-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 6l6 6-6 6" />
+              </svg></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- step 2: generation -->
+      <section id="step-model" class="step">
+        <div class="step-nav">
+          <button type="button" class="link-btn" data-back="step-shape">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M11 6l-6 6 6 6" />
+            </svg>
+            models
+          </button>
+        </div>
+        <div class="step-head">
+          <p class="eyebrow">step 2 of 4</p>
+          <h2 class="step-title" tabindex="-1">choose your generation</h2>
+          <p class="step-desc" id="model-desc">which generation do you want?</p>
+        </div>
+        <div class="card-grid" id="model-grid" data-stagger></div>
+      </section>
+
+      <!-- step 3: quality -->
+      <section id="step-quality" class="step">
+        <div class="step-nav">
+          <button type="button" class="link-btn" data-back="step-model">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M11 6l-6 6 6 6" />
+            </svg>
+            generations
+          </button>
+        </div>
+        <div class="step-head">
+          <p class="eyebrow">step 3 of 4</p>
+          <h2 class="step-title" tabindex="-1">pick your quality</h2>
+          <p class="step-desc">from budget beaters to flawless 1:1 flagships.</p>
+        </div>
+        <div class="card-grid" id="quality-grid" data-stagger></div>
+      </section>
+
+      <!-- step 4: result -->
+      <section id="step-result" class="step">
+        <div class="step-nav">
+          <button type="button" class="link-btn" data-back="step-quality">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M11 6l-6 6 6 6" />
+            </svg>
+            quality
+          </button>
+        </div>
+        <div class="step-head">
+          <p class="eyebrow">step 4 of 4</p>
+          <h2 class="step-title" tabindex="-1">your pair</h2>
+        </div>
+
+        <div class="result" data-stagger>
+          <div class="result-media"><img id="result-img" src="assets/img/pro2.png" alt="" decoding="async"></div>
+          <div class="result-body">
+            <h3 class="result-title" id="result-title">your selection</h3>
+            <p class="result-desc" id="result-desc"></p>
+            <div class="result-price"><span id="result-price">$0</span><small>nzd</small></div>
+            <p class="result-note">includes shipping to nz</p>
+            <a id="whatsapp-link" href="#" target="_blank" rel="noopener" class="btn btn-wa btn-block">
+              order on whatsapp
+              <svg class="i-out" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9" />
+              </svg>
+            </a>
+            <div class="result-foot">
+              <button type="button" class="link-btn" data-back="step-shape">start over</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
+  </main>
 
-  </div>
-
-  <!-- aesthetic gallery -->
-  <section class="section" id="gallery" style="border-top: 1px solid var(--border); margin-top: 60px;">
+  <!-- gallery -->
+  <section class="gallery" id="gallery" aria-labelledby="gallery-title">
     <div class="wrap">
-      <div class="section-top" style="text-align: center;">
-        <h2 class="section-title">pics</h2>
+      <div class="section-head">
+        <h2 class="section-title" id="gallery-title">pics</h2>
+        <span class="section-meta" id="gallery-count"></span>
       </div>
       <div class="gallery-grid">
-        <img src="assets/AirPods%20aesthetic.jpg" alt="AirPods aesthetic" loading="lazy">
-        <img src="assets/air%20pods%20aesthetic.jpg" alt="air pods aesthetic" loading="lazy">
-        <img src="assets/AirPods%20pro2(1).jpg" alt="AirPods pro2" loading="lazy">
-        <img src="assets/airpods%20pro%202🤍.jpg" alt="airpods pro 2" loading="lazy">
-        <img src="assets/Pro2withPhone.jpg" alt="AirPods 2" loading="lazy">
-        <img src="assets/EsKIiaJx.jpg" alt="AirPods" loading="lazy">
-        <img src="assets/jas1Nngs.jpg" alt="AirPods" loading="lazy">
-        <img src="assets/I06GuZUI.jpg" alt="AirPods max" loading="lazy">
+        <button type="button" class="gallery-item"><img src="assets/AirPods%20aesthetic.jpg" alt="AirPods aesthetic" loading="lazy" decoding="async"></button>
+        <button type="button" class="gallery-item"><img src="assets/air%20pods%20aesthetic.jpg" alt="air pods aesthetic" loading="lazy" decoding="async"></button>
+        <button type="button" class="gallery-item"><img src="assets/AirPods%20pro2(1).jpg" alt="AirPods pro2" loading="lazy" decoding="async"></button>
+        <button type="button" class="gallery-item"><img src="assets/airpods%20pro%202🤍.jpg" alt="airpods pro 2" loading="lazy" decoding="async"></button>
+        <button type="button" class="gallery-item"><img src="assets/Pro2withPhone.jpg" alt="AirPods 2" loading="lazy" decoding="async"></button>
+        <button type="button" class="gallery-item"><img src="assets/EsKIiaJx.jpg" alt="AirPods" loading="lazy" decoding="async"></button>
+        <button type="button" class="gallery-item"><img src="assets/jas1Nngs.jpg" alt="AirPods" loading="lazy" decoding="async"></button>
+        <button type="button" class="gallery-item"><img src="assets/I06GuZUI.jpg" alt="AirPods max" loading="lazy" decoding="async"></button>
       </div>
     </div>
   </section>
 
-  <!-- image lightbox modal -->
-  <div id="lightbox-modal" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
-    <div class="lightbox-content">
-      <button class="lightbox-close" onclick="closeLightbox()" aria-label="close">✕</button>
-      <button class="lightbox-nav lightbox-prev" onclick="changeLightboxImage(-1)" aria-label="previous image">‹</button>
-      <div class="lightbox-img-wrap">
-        <img id="lightbox-img" src="" alt="maximized picture">
-      </div>
-      <button class="lightbox-nav lightbox-next" onclick="changeLightboxImage(1)" aria-label="next image">›</button>
-      <div class="lightbox-counter" id="lightbox-counter">1 / 8</div>
+  <!-- lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="photo viewer" hidden>
+    <div class="lb-backdrop"></div>
+    <div class="lb-top lb-chrome">
+      <span class="lb-counter" id="lb-counter" aria-live="polite">1 / 8</span>
+      <button type="button" class="lb-btn" id="lb-close" aria-label="close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18" />
+        </svg>
+      </button>
+    </div>
+    <div class="lb-stage" id="lb-stage">
+      <img id="lb-img" class="lb-img" src="" alt="" draggable="false">
+    </div>
+    <div class="lb-bar lb-chrome">
+      <button type="button" class="lb-btn lb-nav lb-prev" id="lb-prev" aria-label="previous photo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 6l-6 6 6 6" />
+        </svg>
+      </button>
+      <button type="button" class="lb-btn lb-nav lb-next" id="lb-next" aria-label="next photo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" />
+        </svg>
+      </button>
     </div>
   </div>
 
-  <footer class="minimal-footer"
-    style="padding: 40px 20px; text-align:center; border-top: 1px solid var(--border); margin-top: 40px;">
-    <p style="font-size:0.8rem; color:var(--text-muted);">© 2026 reps.ct.ws - all prices in nzd</p>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 reps.ct.ws · all prices in nzd</span>
+      <a href="https://instagram.com/pidi.mp3" target="_blank" rel="noopener">instagram.com/pidi.mp3</a>
+    </div>
   </footer>
 
   <script>
-    // Logic: base_nzd = usd * 1.65
-    // total = Math.ceil((base_nzd + 18) / 10) * 10
-    function calcPrice(usd) {
-      const baseNzd = usd * 1.65;
-      return Math.ceil((baseNzd + 18) / 10) * 10;
-    }
+    (() => {
+      'use strict';
 
-    const inventory = {
-      pro: {
-        title: "Apple AirPods Pro",
-        models: [
-          {
-            id: "pro2",
-            name: "AirPods Pro 2",
-            desc: "The classic Pro model with volume swipe controls.",
-            img: "assets/img/pro2.png",
-            qualities: [
-              { level: "good", title: "good (budget)", desc: "good noise cancelation and clean, punchy sound.", usd: 22, name: "budget pro 2" },
-              { level: "better", title: "better (mid-tier)", desc: "stronger noise canceling and punchy bass.", usd: 52, name: "mid-tier pro 2" },
-              { level: "best", title: "best (1:1 flagship)", desc: "flawless silence and premium features.", usd: 58, name: "flagship pro 2" }
-            ]
-          },
-          {
-            id: "pro3",
-            name: "AirPods Pro 3",
-            desc: "The newest Pro model with optical heart rate sensor.",
-            img: "assets/img/pro3.png",
-            qualities: [
-              { level: "good", title: "good (budget)", desc: "good noise cancelation and clean, punchy sound.", usd: 27, name: "budget pro 3" },
-              { level: "better", title: "better (mid-tier)", desc: "stronger noise canceling and punchy bass.", usd: 37, name: "mid-tier pro 3" },
-              { level: "best", title: "best (1:1 flagship)", desc: "flawless silence and latest features.", usd: 67, name: "flagship pro 3" }
-            ]
-          }
-        ]
-      },
-      gen: {
-        title: "Apple AirPods (Original)",
-        models: [
-          {
-            id: "gen2",
-            name: "AirPods 2",
-            desc: "The classic long stem design.",
-            img: "assets/img/original2.png",
-            qualities: [
-              { level: "good", title: "good (standard)", desc: "great daily audio.", usd: 24, name: "standard gen 2" },
-              { level: "best", title: "best (1:1 flagship)", desc: "perfect 1:1 classic fit.", usd: 26, name: "flagship gen 2" }
-            ]
-          },
-          {
-            id: "gen4",
-            name: "AirPods 4",
-            desc: "The latest open-ear model with ANC.",
-            img: "assets/img/original4.png",
-            qualities: [
-              { level: "good", title: "good (budget)", desc: "standard open-ear listening.", usd: 29, name: "budget gen 4" },
-              { level: "better", title: "better (mid-tier)", desc: "upgraded audio drivers.", usd: 42, name: "mid-tier gen 4" },
-              { level: "best", title: "best (1:1 flagship)", desc: "includes open-ear active noise cancellation.", usd: 52, name: "flagship gen 4" }
-            ]
-          }
-        ]
-      },
-      max: {
-        title: "Apple AirPods Max",
-        models: [
-          {
-            id: "max",
-            name: "AirPods Max",
-            desc: "Over-ear luxury headphones.",
-            img: "assets/img/max.png",
-            qualities: [
-              { level: "good", title: "good (plastic build)", desc: "looks the part, but made of plastic.", usd: 93, name: "plastic max" },
-              { level: "better", title: "better (standard metal)", desc: "real cold metal earcups.", usd: 112, name: "standard metal max" },
-              { level: "best", title: "best (1:1 flagship)", desc: "flawless 1:1 aluminium build.", usd: 126, name: "flagship metal max" }
-            ]
-          }
-        ]
+      /* ------------------------------------------------------------------
+         motion helpers
+         ------------------------------------------------------------------ */
+      const REDUCED = matchMedia('(prefers-reduced-motion: reduce)');
+      const EASE_OUT = 'cubic-bezier(0.22, 1, 0.36, 1)';
+      const EASE_IN = 'cubic-bezier(0.4, 0, 1, 1)';
+      const EASE_IN_OUT = 'cubic-bezier(0.65, 0, 0.35, 1)';
+
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+      function play(el, frames, opts = {}) {
+        const o = { duration: 300, easing: EASE_OUT, ...opts };
+        if (REDUCED.matches) { o.duration = 0; o.delay = 0; }
+        return el.animate(frames, o);
       }
-    };
+      // resolves true when finished, false when cancelled
+      const done = (a) => a.finished.then(() => true, () => false);
+      const stopAll = (el) => el.getAnimations().forEach((a) => a.cancel());
 
-    let selectedShape = null;
-    let selectedModelId = null;
+      function staggerIn(els, { delay = 0, step = 45, y = 14, duration = 480 } = {}) {
+        els.forEach((el, i) => play(el,
+          [{ opacity: 0, transform: `translateY(${y}px)` }, { opacity: 1, transform: 'none' }],
+          { duration, delay: delay + i * step, fill: 'backwards' }));
+      }
 
-    function showStep(id) {
-      document.querySelectorAll('.selection-step').forEach(el => el.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
+      function expand(el) {
+        const fromH = el.hidden ? 0 : el.offsetHeight;
+        const fromO = el.hidden ? 0 : +getComputedStyle(el).opacity;
+        stopAll(el);
+        el.hidden = false;
+        const toH = el.offsetHeight;
+        el.classList.add('is-clipped');
+        const a = play(el, [{ height: fromH + 'px', opacity: fromO }, { height: toH + 'px', opacity: 1 }], { duration: 460 });
+        done(a).then((ok) => ok && el.classList.remove('is-clipped'));
+        return a;
+      }
 
-    function goBack(id) {
-      showStep(id);
-    }
-
-    function getShapePriceRange(shapeKey) {
-      const shape = inventory[shapeKey];
-      if (!shape) return '';
-      let prices = [];
-      shape.models.forEach(model => {
-        model.qualities.forEach(q => {
-          prices.push(calcPrice(q.usd));
+      function collapse(el) {
+        if (el.hidden) return Promise.resolve();
+        const fromH = el.offsetHeight;
+        const fromO = +getComputedStyle(el).opacity;
+        stopAll(el);
+        el.classList.add('is-clipped');
+        const a = play(el, [{ height: fromH + 'px', opacity: fromO }, { height: '0px', opacity: 0 }],
+          { duration: 340, easing: EASE_IN_OUT, fill: 'forwards' });
+        return done(a).then((ok) => {
+          if (!ok) return;
+          el.hidden = true;
+          el.classList.remove('is-clipped');
+          stopAll(el);
         });
-      });
-      const min = Math.min(...prices);
-      const max = Math.max(...prices);
-      return min === max ? `$${min} nzd` : `$${min} – $${max} nzd`;
-    }
+      }
 
-    function getModelPriceRange(model) {
-      let prices = model.qualities.map(q => calcPrice(q.usd));
-      const min = Math.min(...prices);
-      const max = Math.max(...prices);
-      return min === max ? `$${min} nzd` : `$${min} – $${max} nzd`;
-    }
+      function headerOffset() {
+        return (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 56) + 12;
+      }
 
-    function initCategoryPrices() {
-      Object.keys(inventory).forEach(key => {
-        const el = document.getElementById(`price-shape-${key}`);
-        if (el) {
-          el.innerText = getShapePriceRange(key);
+      function scrollToEl(el, { onlyIfAbove = true } = {}) {
+        const top = el.getBoundingClientRect().top - headerOffset();
+        if (onlyIfAbove && top >= 0) return;
+        window.scrollTo({ top: window.scrollY + top, behavior: REDUCED.matches ? 'auto' : 'smooth' });
+      }
+
+      const ICON_CHEVRON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
+      const ICON_CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+      const ICON_BACK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
+      const ICON_OUT = '<svg class="i-out" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+      /* ------------------------------------------------------------------
+         pricing + inventory
+         ------------------------------------------------------------------ */
+      // Logic: base_nzd = usd * 1.65
+      // total = Math.ceil((base_nzd + 18) / 10) * 10
+      function calcPrice(usd) {
+        const baseNzd = usd * 1.65;
+        return Math.ceil((baseNzd + 18) / 10) * 10;
+      }
+
+      const inventory = {
+        pro: {
+          title: "Apple AirPods Pro",
+          models: [
+            {
+              id: "pro2",
+              name: "AirPods Pro 2",
+              desc: "the classic pro with swipe volume controls.",
+              img: "assets/img/pro2.png",
+              qualities: [
+                { level: "good", title: "good (budget)", desc: "good noise cancelation and clean, punchy sound.", usd: 22, name: "budget pro 2" },
+                { level: "better", title: "better (mid-tier)", desc: "stronger noise canceling and punchy bass.", usd: 52, name: "mid-tier pro 2" },
+                { level: "best", title: "best (1:1 flagship)", desc: "flawless silence and premium features.", usd: 58, name: "flagship pro 2" }
+              ]
+            },
+            {
+              id: "pro3",
+              name: "AirPods Pro 3",
+              desc: "the newest pro with heart rate sensor.",
+              img: "assets/img/pro3.png",
+              qualities: [
+                { level: "good", title: "good (budget)", desc: "good noise cancelation and clean, punchy sound.", usd: 27, name: "budget pro 3" },
+                { level: "better", title: "better (mid-tier)", desc: "stronger noise canceling and punchy bass.", usd: 37, name: "mid-tier pro 3" },
+                { level: "best", title: "best (1:1 flagship)", desc: "flawless silence and latest features.", usd: 67, name: "flagship pro 3" }
+              ]
+            }
+          ]
+        },
+        gen: {
+          title: "Apple AirPods (Original)",
+          models: [
+            {
+              id: "gen2",
+              name: "AirPods 2",
+              desc: "the classic long stem design.",
+              img: "assets/img/original2.png",
+              qualities: [
+                { level: "good", title: "good (standard)", desc: "great daily audio.", usd: 24, name: "standard gen 2" },
+                { level: "best", title: "best (1:1 flagship)", desc: "perfect 1:1 classic fit.", usd: 26, name: "flagship gen 2" }
+              ]
+            },
+            {
+              id: "gen4",
+              name: "AirPods 4",
+              desc: "the latest open-ear model with anc.",
+              img: "assets/img/original4.png",
+              qualities: [
+                { level: "good", title: "good (budget)", desc: "standard open-ear listening.", usd: 29, name: "budget gen 4" },
+                { level: "better", title: "better (mid-tier)", desc: "upgraded audio drivers.", usd: 42, name: "mid-tier gen 4" },
+                { level: "best", title: "best (1:1 flagship)", desc: "includes open-ear active noise cancellation.", usd: 52, name: "flagship gen 4" }
+              ]
+            }
+          ]
+        },
+        max: {
+          title: "Apple AirPods Max",
+          models: [
+            {
+              id: "max",
+              name: "AirPods Max",
+              desc: "over-ear luxury headphones.",
+              img: "assets/img/max.png",
+              qualities: [
+                { level: "good", title: "good (plastic build)", desc: "looks the part, but made of plastic.", usd: 93, name: "plastic max" },
+                { level: "better", title: "better (standard metal)", desc: "real cold metal earcups.", usd: 112, name: "standard metal max" },
+                { level: "best", title: "best (1:1 flagship)", desc: "flawless 1:1 aluminium build.", usd: 126, name: "flagship metal max" }
+              ]
+            }
+          ]
         }
-      });
-    }
-
-    initCategoryPrices();
-
-    function selectShape(shapeKey) {
-      selectedShape = shapeKey;
-      const shapeData = inventory[shapeKey];
-
-      const grid = document.getElementById('model-grid');
-      grid.innerHTML = '';
-
-      shapeData.models.forEach(model => {
-        const btn = document.createElement('button');
-        btn.className = 'opt-btn';
-        const priceRange = getModelPriceRange(model);
-        btn.innerHTML = `
-          <img src="${model.img}" alt="${model.name}" style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 16px; display: block;">
-          ${model.name}
-          <div class="opt-price-tag">${priceRange}</div>
-          <span>${model.desc}</span>
-        `;
-        btn.onclick = () => selectModel(model.id);
-        grid.appendChild(btn);
-      });
-
-      showStep('step-model');
-    }
-
-    function selectModel(modelId) {
-      selectedModelId = modelId;
-      const shapeData = inventory[selectedShape];
-      const modelData = shapeData.models.find(m => m.id === modelId);
-
-      const grid = document.getElementById('quality-grid');
-      grid.innerHTML = '';
-
-      modelData.qualities.forEach(item => {
-        const btn = document.createElement('button');
-        btn.className = 'opt-btn';
-        if (item.level === 'best') btn.style.borderColor = 'rgba(37,211,102,0.5)';
-        const priceNzd = calcPrice(item.usd);
-
-        btn.innerHTML = `
-          ${item.title}
-          <div class="opt-price-tag">$${priceNzd} nzd</div>
-          <span>${item.desc}</span>
-        `;
-        // Pass modelName and item so we know both context
-        btn.onclick = () => selectQuality(modelData.name, item);
-        grid.appendChild(btn);
-      });
-
-      showStep('step-quality');
-    }
-
-    function selectQuality(modelName, item) {
-      const priceNzd = calcPrice(item.usd);
-
-      const fullTitle = `${modelName} - ${item.level.toUpperCase()}`;
-
-      document.getElementById('result-title').innerText = fullTitle;
-      document.getElementById('result-desc').innerText = item.desc;
-      document.getElementById('result-price').innerText = '$' + priceNzd;
-
-      const msg = encodeURIComponent(`ORDER: ${fullTitle} (${item.name}) for $${priceNzd} nzd.`);
-      document.getElementById('whatsapp-link').href = `https://wa.me/491789142763?text=${msg}`;
-
-      showStep('step-result');
-    }
-
-    // lightbox gallery logic
-    let galleryImages = [];
-    let currentImageIndex = 0;
-
-    function initGallery() {
-      const imgs = document.querySelectorAll('.gallery-grid img');
-      galleryImages = Array.from(imgs).map(img => img.src);
-      imgs.forEach((img, idx) => {
-        img.addEventListener('click', () => openLightbox(idx));
-      });
-    }
-
-    function openLightbox(index) {
-      currentImageIndex = index;
-      updateLightbox();
-      const modal = document.getElementById('lightbox-modal');
-      if (modal) {
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-      }
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      const modal = document.getElementById('lightbox-modal');
-      if (modal) {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-      }
-      document.body.style.overflow = '';
-    }
-
-    function changeLightboxImage(direction) {
-      if (!galleryImages.length) return;
-      currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
-      updateLightbox();
-    }
-
-    function updateLightbox() {
-      const imgEl = document.getElementById('lightbox-img');
-      const counterEl = document.getElementById('lightbox-counter');
-      if (imgEl && galleryImages[currentImageIndex]) {
-        imgEl.src = galleryImages[currentImageIndex];
-      }
-      if (counterEl) {
-        counterEl.innerText = `${currentImageIndex + 1} / ${galleryImages.length}`;
-      }
-    }
-
-    window.addEventListener('keydown', (e) => {
-      const modal = document.getElementById('lightbox-modal');
-      if (!modal || !modal.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') changeLightboxImage(-1);
-      if (e.key === 'ArrowRight') changeLightboxImage(1);
-    });
-
-    initGallery();
-
-    // --- AIRREPS QUIZ LOGIC ---
-    const quizQuestions = [
-      {
-        id: 'formFactor',
-        question: 'what style are you looking for?',
-        hint: 'choose the shape and fit that works best for your ears.',
-        options: [
-          { value: 'in-ear', emoji: '🎧', label: 'in-ear (sealed fit)', desc: 'like airpods pro — rubber ear tips, best sound isolation & anc' },
-          { value: 'open-fit', emoji: '👂', label: 'open-fit (no seal)', desc: 'like airpods 4 or 2 — sits gently in your ear, natural feel' },
-          { value: 'over-ear', emoji: '🎧', label: 'over-ear headphones', desc: 'like airpods max — premium full-size metal flex' }
-        ]
-      },
-      {
-        id: 'device',
-        question: 'what will you primarily use them with?',
-        hint: 'apple devices get automatic popups and icloud sync.',
-        options: [
-          { value: 'iphone', emoji: '📱', label: 'iphone / ipad', desc: 'ios devices only' },
-          { value: 'mac', emoji: '💻', label: 'mac (macos)', desc: 'macbook, imac, mac mini' },
-          { value: 'apple-mix', emoji: '🍏', label: 'multiple apple devices', desc: 'iphone + mac, want seamless switching' },
-          { value: 'other', emoji: '🤖', label: 'windows / android', desc: 'non-apple or multi-platform use' }
-        ]
-      },
-      {
-        id: 'useCase',
-        condition: (ans) => ans.formFactor === 'in-ear',
-        question: 'what will you mainly use them for?',
-        hint: 'different chipsets excel at anc, microphones, or battery.',
-        options: [
-          { value: 'commute', emoji: '🚆', label: 'commute / travel', desc: 'transparency mode & strong anc for transit noise' },
-          { value: 'gym', emoji: '🏃', label: 'gym / sports', desc: 'sweatproof, durable, secure fit during workouts' },
-          { value: 'calls', emoji: '📞', label: 'phone calls / meetings', desc: 'best microphone quality & background noise reduction' },
-          { value: 'casual', emoji: '🎵', label: 'casual listening', desc: 'all-around everyday music and podcasts' }
-        ]
-      },
-      {
-        id: 'priority',
-        question: 'what matters most to you?',
-        hint: 'pick the single most important factor.',
-        options: [
-          { value: 'anc', emoji: '🤫', label: 'best noise cancelling', desc: 'block out as much background noise as possible' },
-          { value: 'features', emoji: '✨', label: 'most features', desc: 'icloud connect, spatial audio, head tracking & swipe volume' },
-          { value: 'stable', emoji: '🛡️', label: 'most stable & proven', desc: 'reliable community favorite with zero bugs' },
-          { value: 'latest', emoji: '⚡', label: 'latest & newest', desc: 'newest design, latest generation — airpods pro 3 look' },
-          { value: 'budget', emoji: '💰', label: 'best value', desc: 'solid quality and great sound without spending too much' }
-        ]
-      }
-    ];
-
-    let quizAnswers = {};
-    let quizStep = 0;
-
-    function getActiveQuizQuestions() {
-      return quizQuestions.filter(q => !q.condition || q.condition(quizAnswers));
-    }
-
-    function openQuiz() {
-      const sec = document.getElementById('quiz-section');
-      if (!sec) return;
-      sec.style.display = 'block';
-      quizStep = 0;
-      quizAnswers = {};
-      renderQuizStep();
-      sec.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function closeQuiz() {
-      const sec = document.getElementById('quiz-section');
-      if (sec) sec.style.display = 'none';
-    }
-
-    function toggleQuizView() {
-      const sec = document.getElementById('quiz-section');
-      if (!sec) return;
-      if (sec.style.display === 'none' || !sec.style.display) {
-        openQuiz();
-      } else {
-        closeQuiz();
-      }
-    }
-
-    function answerQuiz(questionId, value) {
-      quizAnswers[questionId] = value;
-      quizStep++;
-      renderQuizStep();
-    }
-
-    function quizBack() {
-      if (quizStep > 0) {
-        quizStep--;
-        const active = getActiveQuizQuestions();
-        const curQ = active[quizStep];
-        if (curQ) delete quizAnswers[curQ.id];
-        renderQuizStep();
-      }
-    }
-
-    function renderQuizStep() {
-      const active = getActiveQuizQuestions();
-      const card = document.getElementById('quiz-card');
-      const progressBar = document.getElementById('quiz-progress-bar');
-      const stepLabel = document.getElementById('quiz-step-label');
-      if (!card) return;
-
-      if (quizStep >= active.length) {
-        if (stepLabel) stepLabel.innerText = 'your recommendation';
-        if (progressBar) progressBar.style.width = '100%';
-        renderQuizResult();
-        return;
-      }
-
-      const q = active[quizStep];
-      if (stepLabel) stepLabel.innerText = `step ${quizStep + 1} of ${active.length}`;
-      if (progressBar) progressBar.style.width = `${((quizStep + 1) / active.length) * 100}%`;
-
-      let html = `
-        <div class="quiz-question">${q.question}</div>
-        <div class="quiz-hint">${q.hint}</div>
-        <div class="quiz-options">
-      `;
-
-      q.options.forEach(opt => {
-        html += `
-          <button class="quiz-option" onclick="answerQuiz('${q.id}', '${opt.value}')">
-            <span class="qo-emoji">${opt.emoji}</span>
-            <div>
-              <div>${opt.label}</div>
-              <small>${opt.desc}</small>
-            </div>
-          </button>
-        `;
-      });
-
-      html += `</div>`;
-
-      if (quizStep > 0) {
-        html += `<button class="quiz-back" onclick="quizBack()">← back</button>`;
-      }
-
-      card.className = 'quiz-anim';
-      card.innerHTML = html;
-    }
-
-    function renderQuizResult() {
-      const card = document.getElementById('quiz-card');
-      if (!card) return;
-      const { formFactor, device, priority, useCase } = quizAnswers;
-      const isMac = (device === 'mac' || device === 'apple-mix');
-
-      let rec = {
-        title: 'AirPods Pro 2 (1:1 Flagship)',
-        subtitle: 'best noise cancelling & proven stability',
-        shape: 'pro',
-        modelId: 'pro2',
-        qualityLevel: 'best',
-        price: calcPrice(58),
-        img: 'assets/img/pro2.png',
-        why: [
-          '34+ dB active noise cancelling & clean transparency mode',
-          '8 hour battery life on a single charge with usb-c case',
-          'full swipe volume control, precision lanyard loop & speaker chimes',
-          isMac ? 'seamless switching with macos & ios' : 'rock solid bluetooth connection with all devices'
-        ],
-        alts: [
-          { name: 'AirPods 4 (Open-Fit Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' },
-          { name: 'AirPods Max (Metal Flagship)', price: calcPrice(126), img: 'assets/img/max.png', shape: 'max', modelId: 'max' }
-        ]
       };
 
-      if (formFactor === 'over-ear') {
-        if (priority === 'budget') {
-          rec = {
-            title: 'AirPods Max (Plastic Build)',
-            subtitle: 'budget over-ear with extreme aesthetic flex',
-            shape: 'max',
-            modelId: 'max',
-            qualityLevel: 'good',
-            price: calcPrice(93),
-            img: 'assets/img/max.png',
-            why: [
-              'full over-ear silhouette with working digital crown',
-              'plastic earcups keep the weight light and the cost accessible',
-              'solid daily audio & spatial audio'
-            ],
-            alts: [
-              { name: 'AirPods Max (Metal Flagship)', price: calcPrice(126), img: 'assets/img/max.png', shape: 'max', modelId: 'max' },
-              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
-            ]
-          };
-        } else {
-          rec = {
-            title: 'AirPods Max (1:1 Metal Flagship)',
-            subtitle: 'real cold aluminium earcups & heavy luxury feel',
-            shape: 'max',
-            modelId: 'max',
-            qualityLevel: 'best',
-            price: calcPrice(126),
-            img: 'assets/img/max.png',
-            why: [
-              'real cold metal aluminium earcups with genuine weight',
-              'breathable knit mesh canopy headband & memory foam ear cushions',
-              'hybrid active noise cancellation & dynamic spatial audio',
-              '~50 hours battery life between charges'
-            ],
-            alts: [
-              { name: 'AirPods Max (Plastic Budget)', price: calcPrice(93), img: 'assets/img/max.png', shape: 'max', modelId: 'max' },
-              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
-            ]
-          };
-        }
-      } else if (formFactor === 'open-fit') {
-        if (priority === 'budget') {
-          rec = {
-            title: 'AirPods 2 (Standard Classic)',
-            subtitle: 'the classic lightweight daily driver',
-            shape: 'gen',
-            modelId: 'gen2',
-            qualityLevel: 'good',
-            price: calcPrice(24),
-            img: 'assets/img/original2.png',
-            why: [
-              'ultra affordable classic stem design that rests comfortably in ear',
-              'zero ear fatigue — perfect for all-day wearing & calls',
-              'instant pairing with iphone & long-lasting battery'
-            ],
-            alts: [
-              { name: 'AirPods 4 (1:1 Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' },
-              { name: 'AirPods Pro 2 (Budget Good)', price: calcPrice(22), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
-            ]
-          };
-        } else {
-          rec = {
-            title: 'AirPods 4 (1:1 Flagship ANC)',
-            subtitle: 'latest open-ear design with active noise cancellation',
-            shape: 'gen',
-            modelId: 'gen4',
-            qualityLevel: 'best',
-            price: calcPrice(52),
-            img: 'assets/img/original4.png',
-            why: [
-              'newest compact acoustic shape fits securely without rubber tips',
-              'includes active noise cancellation in an open-ear design',
-              'usb-c wireless charging case with speaker chime',
-              'adaptive audio & personalized spatial audio'
-            ],
-            alts: [
-              { name: 'AirPods 2 (Classic)', price: calcPrice(24), img: 'assets/img/original2.png', shape: 'gen', modelId: 'gen2' },
-              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
-            ]
-          };
-        }
-      } else {
-        // In-ear
-        if (priority === 'latest') {
-          rec = {
-            title: 'AirPods Pro 3 (1:1 Flagship)',
-            subtitle: 'newest pro design with optical sensor & ultra-modern look',
-            shape: 'pro',
-            modelId: 'pro3',
-            qualityLevel: 'best',
-            price: calcPrice(67),
-            img: 'assets/img/pro3.png',
-            why: [
-              'brand new AirPods Pro 3 form factor with 1:1 hinge finish',
-              'optical heart rate sensor simulation & latest gesture controls',
-              'strong active noise cancelling & dynamic low latency audio'
-            ],
-            alts: [
-              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' },
-              { name: 'AirPods 4 (1:1 Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' }
-            ]
-          };
-        } else if (priority === 'budget') {
-          rec = {
-            title: 'AirPods Pro 2 (Budget Good)',
-            subtitle: 'good noise cancelation & clean punchy sound at lowest cost',
-            shape: 'pro',
-            modelId: 'pro2',
-            qualityLevel: 'good',
-            price: calcPrice(22),
-            img: 'assets/img/pro2.png',
-            why: [
-              'good noise cancelation & solid bass for just $' + calcPrice(22) + ' nzd',
-              'rubber silicone tips seal out room ambience',
-              'unbeatable price-to-performance entry point'
-            ],
-            alts: [
-              { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' },
-              { name: 'AirPods 2 (Classic)', price: calcPrice(24), img: 'assets/img/original2.png', shape: 'gen', modelId: 'gen2' }
-            ]
-          };
-        }
+      const priceRange = (prices) => {
+        const min = Math.min(...prices);
+        const max = Math.max(...prices);
+        return min === max ? `$${min}` : `$${min} – $${max}`;
+      };
+      const priceHTML = (txt) => `${txt}<small>nzd</small>`;
+      const shapePrices = (key) => inventory[key].models.flatMap((m) => m.qualities.map((q) => calcPrice(q.usd)));
+      const modelPrices = (model) => model.qualities.map((q) => calcPrice(q.usd));
+
+      Object.keys(inventory).forEach((key) => {
+        const el = document.getElementById(`price-shape-${key}`);
+        if (el) el.innerHTML = priceHTML(priceRange(shapePrices(key)));
+      });
+
+      /* ------------------------------------------------------------------
+         builder steps
+         ------------------------------------------------------------------ */
+      const STEPS = ['step-shape', 'step-model', 'step-quality', 'step-result'];
+      const builder = $('#builder');
+      let stepToken = 0;
+      let selectedShape = null;
+
+      function showStep(id, { instant = false, scroll = true } = {}) {
+        const steps = STEPS.map((s) => document.getElementById(s));
+        const to = document.getElementById(id);
+        const from = steps.find((s) => s.classList.contains('active'));
+        const token = ++stepToken;
+
+        if (from === to) { stopAll(to); to.inert = false; return; }
+
+        const dir = STEPS.indexOf(id) > STEPS.indexOf(from ? from.id : '') ? 1 : -1;
+        const hadFocus = from && from.contains(document.activeElement);
+
+        const enter = () => {
+          if (token !== stepToken) return;
+          const h0 = builder.offsetHeight;
+          stopAll(builder);
+          steps.forEach((s) => { stopAll(s); s.inert = false; s.classList.toggle('active', s === to); });
+          if (hadFocus) { const h = $('.step-title', to); if (h) h.focus({ preventScroll: true }); }
+          if (instant) return;
+
+          const h1 = builder.offsetHeight;
+          if (h0 !== h1) {
+            builder.classList.add('is-clipped');
+            done(play(builder, [{ height: h0 + 'px' }, { height: h1 + 'px' }], { duration: 440 }))
+              .then((ok) => ok && builder.classList.remove('is-clipped'));
+          }
+          play(to, [{ opacity: 0, transform: `translateX(${28 * dir}px)` }, { opacity: 1, transform: 'none' }], { duration: 440 });
+          staggerIn($$('[data-stagger] > *', to), { delay: 70 });
+          if (scroll) scrollToEl(builder);
+        };
+
+        if (!from || instant) return enter();
+        from.inert = true;
+        done(play(from,
+          [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: `translateX(${-28 * dir}px)` }],
+          { duration: 180, easing: EASE_IN, fill: 'forwards' })).then(enter);
       }
 
-      const orderMsg = encodeURIComponent(`ORDER: ${rec.title} for $${rec.price} nzd (recommended from quiz).`);
-      const waUrl = `https://wa.me/491789142763?text=${orderMsg}`;
+      function productCard({ img, title, desc, price }) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'card card--product';
+        btn.innerHTML = `
+          <span class="card-media"><img src="${img}" alt="" decoding="async"></span>
+          <span class="card-body">
+            <span class="card-title">${title}</span>
+            <span class="card-desc">${desc}</span>
+            <span class="card-price">${priceHTML(price)}</span>
+          </span>
+          <span class="card-arrow" aria-hidden="true">${ICON_CHEVRON}</span>`;
+        return btn;
+      }
 
-      let whyList = rec.why.map(w => `<li>✓ ${w}</li>`).join('');
-      let altsHtml = rec.alts.map(alt => `
-        <div class="quiz-alt" style="cursor:pointer;" onclick="selectQuizRec('${alt.shape}', '${alt.modelId}', 'best')">
-          <img src="${alt.img}" alt="${alt.name}">
-          <div>
-            <div style="font-weight:600;">${alt.name}</div>
-            <span style="color:var(--text-muted); font-size:0.75rem;">$${alt.price} nzd</span>
-          </div>
-        </div>
-      `).join('');
+      const LEVELS = { good: 1, better: 2, best: 3 };
 
-      card.className = 'quiz-anim';
-      card.innerHTML = `
-        <div class="quiz-result">
-          <div class="quiz-result-img">
-            <img src="${rec.img}" alt="${rec.title}">
-          </div>
-          <div>
-            <div style="font-size:0.75rem; color:var(--accent); font-weight:700; letter-spacing:0.05em; margin-bottom:4px;">our pick for you</div>
-            <h3>${rec.title}</h3>
-            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:8px;">${rec.subtitle}</p>
-            <div style="font-size:2rem; font-weight:800; margin-bottom:12px;">$${rec.price} <span style="font-size:0.85rem; font-weight:400; color:var(--text-muted);">nzd shipped</span></div>
+      function tierCard(item) {
+        const sub = (item.title.match(/\(([^)]+)\)/) || [])[1] || item.title;
+        const n = LEVELS[item.level] || 1;
+        const best = item.level === 'best';
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'card card--tier' + (best ? ' is-recommended' : '');
+        btn.innerHTML = `
+          <span class="card-body">
+            <span class="tier-head">
+              <span class="meter" aria-hidden="true">${[1, 2, 3].map((i) => `<i${i <= n ? ' class="on"' : ''}></i>`).join('')}</span>
+              <span class="card-kicker">${item.level}</span>
+            </span>
+            <span class="card-title">${sub}</span>
+            <span class="card-desc">${item.desc}</span>
+            <span class="card-price">${priceHTML('$' + calcPrice(item.usd))}</span>
+          </span>
+          ${best ? '<span class="tag">top pick</span>' : ''}`;
+        return btn;
+      }
 
-            <ul class="quiz-why">
-              ${whyList}
-            </ul>
+      function renderModels(shapeKey) {
+        selectedShape = shapeKey;
+        const grid = $('#model-grid');
+        grid.innerHTML = '';
+        inventory[shapeKey].models.forEach((model) => {
+          const btn = productCard({ img: model.img, title: model.name, desc: model.desc, price: priceRange(modelPrices(model)) });
+          btn.addEventListener('click', () => selectModel(model.id));
+          grid.appendChild(btn);
+        });
+      }
 
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
-              <a href="${waUrl}" target="_blank" class="btn btn-whatsapp" style="padding:12px 20px; font-size:0.95rem;">order on whatsapp ↗</a>
-              <button onclick="selectQuizRec('${rec.shape}', '${rec.modelId}', '${rec.qualityLevel}')" class="opt-btn" style="padding:12px 18px; font-size:0.9rem; margin:0;">choose in builder ↓</button>
+      function renderQualities(model) {
+        const grid = $('#quality-grid');
+        grid.innerHTML = '';
+        model.qualities.forEach((item) => {
+          const btn = tierCard(item);
+          btn.addEventListener('click', () => selectQuality(model, item));
+          grid.appendChild(btn);
+        });
+      }
+
+      function renderResult(model, item) {
+        const priceNzd = calcPrice(item.usd);
+        const fullTitle = `${model.name} - ${item.level.toUpperCase()}`;
+        $('#result-img').src = model.img;
+        $('#result-img').alt = model.name;
+        $('#result-title').textContent = `${model.name} · ${item.level}`;
+        $('#result-desc').textContent = item.desc;
+        $('#result-price').textContent = '$' + priceNzd;
+        const msg = encodeURIComponent(`ORDER: ${fullTitle} (${item.name}) for $${priceNzd} nzd.`);
+        $('#whatsapp-link').href = `https://wa.me/491789142763?text=${msg}`;
+      }
+
+      function selectShape(shapeKey) {
+        renderModels(shapeKey);
+        showStep('step-model');
+      }
+
+      function selectModel(modelId) {
+        const model = inventory[selectedShape].models.find((m) => m.id === modelId);
+        if (!model) return;
+        renderQualities(model);
+        showStep('step-quality');
+      }
+
+      function selectQuality(model, item) {
+        renderResult(model, item);
+        showStep('step-result');
+      }
+
+      $$('[data-shape]').forEach((btn) => btn.addEventListener('click', () => selectShape(btn.dataset.shape)));
+      $$('[data-back]').forEach((btn) => btn.addEventListener('click', () => showStep(btn.dataset.back)));
+
+      /* ------------------------------------------------------------------
+         quiz
+         ------------------------------------------------------------------ */
+      const quizQuestions = [
+        {
+          id: 'formFactor',
+          question: 'what style are you looking for?',
+          hint: 'choose the shape and fit that works best for your ears.',
+          options: [
+            { value: 'in-ear', label: 'in-ear (sealed fit)', desc: 'like airpods pro — rubber ear tips, best isolation & anc' },
+            { value: 'open-fit', label: 'open-fit (no seal)', desc: 'like airpods 4 or 2 — sits gently in your ear' },
+            { value: 'over-ear', label: 'over-ear headphones', desc: 'like airpods max — full-size metal flex' }
+          ]
+        },
+        {
+          id: 'device',
+          question: 'what will you mainly use them with?',
+          hint: 'apple devices get automatic popups and icloud sync.',
+          options: [
+            { value: 'iphone', label: 'iphone / ipad', desc: 'ios devices only' },
+            { value: 'mac', label: 'mac', desc: 'macbook, imac, mac mini' },
+            { value: 'apple-mix', label: 'multiple apple devices', desc: 'iphone + mac, seamless switching' },
+            { value: 'other', label: 'windows / android', desc: 'non-apple or mixed use' }
+          ]
+        },
+        {
+          id: 'useCase',
+          condition: (ans) => ans.formFactor === 'in-ear',
+          question: 'what will you mainly use them for?',
+          hint: 'different chipsets are better at anc, mics or battery.',
+          options: [
+            { value: 'commute', label: 'commute / travel', desc: 'transparency mode & strong anc for transit' },
+            { value: 'gym', label: 'gym / sports', desc: 'sweatproof, secure fit during workouts' },
+            { value: 'calls', label: 'calls / meetings', desc: 'best mic quality & noise reduction' },
+            { value: 'casual', label: 'casual listening', desc: 'everyday music and podcasts' }
+          ]
+        },
+        {
+          id: 'priority',
+          question: 'what matters most to you?',
+          hint: 'pick the single most important thing.',
+          options: [
+            { value: 'anc', label: 'best noise cancelling', desc: 'block out as much noise as possible' },
+            { value: 'features', label: 'most features', desc: 'icloud, spatial audio, head tracking & swipe volume' },
+            { value: 'stable', label: 'most stable & proven', desc: 'reliable community favourite' },
+            { value: 'latest', label: 'latest & newest', desc: 'newest design — the airpods pro 3 look' },
+            { value: 'budget', label: 'best value', desc: 'solid sound without spending too much' }
+          ]
+        }
+      ];
+
+      const quizSec = $('#quiz-section');
+      const quizBanner = $('#quiz-banner');
+      const quizCard = $('#quiz-card');
+      const navQuizBtn = $('#nav-quiz-btn');
+      let quizAnswers = {};
+      let quizStep = 0;
+      let quizOpen = false;
+      let quizToken = 0;
+
+      const activeQuestions = () => quizQuestions.filter((q) => !q.condition || q.condition(quizAnswers));
+
+      function openQuiz() {
+        quizStep = 0;
+        quizAnswers = {};
+        if (quizOpen) {
+          renderQuizStep({ dir: -1 });
+          scrollToEl(quizSec);
+          return;
+        }
+        quizOpen = true;
+        navQuizBtn.setAttribute('aria-expanded', 'true');
+        renderQuizStep({ instant: true });
+        // banner sits right above the quiz, so its top is where the quiz will land
+        scrollToEl(quizBanner);
+        collapse(quizBanner);
+        expand(quizSec);
+        staggerIn($$('.quiz-question, .quiz-hint, .quiz-option', quizCard), { delay: 140, step: 40 });
+      }
+
+      function closeQuiz() {
+        if (!quizOpen) return Promise.resolve();
+        quizOpen = false;
+        navQuizBtn.setAttribute('aria-expanded', 'false');
+        ++quizToken;
+        quizCard.inert = false;
+        expand(quizBanner);
+        return collapse(quizSec);
+      }
+
+      function renderQuizStep({ dir = 1, instant = false } = {}) {
+        const active = activeQuestions();
+        const label = $('#quiz-step-label');
+        const bar = $('#quiz-progress-bar');
+
+        if (quizStep >= active.length) {
+          label.textContent = 'your match';
+          bar.style.transform = 'scaleX(1)';
+          swapQuizCard(quizResultHTML(), { dir, instant });
+          return;
+        }
+
+        const q = active[quizStep];
+        label.textContent = `question ${quizStep + 1} of ${active.length}`;
+        bar.style.transform = `scaleX(${(quizStep + 1) / (active.length + 1)})`;
+
+        const options = q.options.map((opt, i) => `
+          <button type="button" class="quiz-option${quizAnswers[q.id] === opt.value ? ' is-selected' : ''}" data-q="${q.id}" data-v="${opt.value}">
+            <span class="qo-index">${String(i + 1).padStart(2, '0')}</span>
+            <span>
+              <span class="qo-label">${opt.label}</span>
+              <span class="qo-desc">${opt.desc}</span>
+            </span>
+            <span class="qo-arrow">${ICON_CHEVRON}</span>
+          </button>`).join('');
+
+        swapQuizCard(`
+          <h3 class="quiz-question">${q.question}</h3>
+          <p class="quiz-hint">${q.hint}</p>
+          <div class="quiz-options">${options}</div>
+          <div class="quiz-footer">${quizStep > 0 ? `<button type="button" class="link-btn" data-action="quiz-back">${ICON_BACK} back</button>` : ''}</div>
+        `, { dir, instant });
+      }
+
+      function swapQuizCard(html, { dir = 1, instant = false } = {}) {
+        const token = ++quizToken;
+        if (instant || !quizCard.firstElementChild) {
+          stopAll(quizCard);
+          quizCard.inert = false;
+          quizCard.innerHTML = html;
+          return;
+        }
+        quizCard.inert = true;
+        const out = play(quizCard,
+          [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: `translateX(${-20 * dir}px)` }],
+          { duration: 170, easing: EASE_IN, fill: 'forwards' });
+
+        done(out).then(() => {
+          if (token !== quizToken) return;
+          const h0 = quizCard.offsetHeight;
+          quizCard.innerHTML = html;
+          stopAll(quizCard);
+          quizCard.inert = false;
+          const h1 = quizCard.offsetHeight;
+
+          quizCard.classList.add('is-clipped');
+          play(quizCard, [{ height: h0 + 'px' }, { height: h1 + 'px' }], { duration: 420 });
+          done(play(quizCard,
+            [{ opacity: 0, transform: `translateX(${20 * dir}px)` }, { opacity: 1, transform: 'none' }],
+            { duration: 420 })).then(() => { if (token === quizToken) quizCard.classList.remove('is-clipped'); });
+
+          staggerIn($$('.quiz-option, .qr-media, .qr-info > *, .qr-alt', quizCard), { delay: 60, step: 35, y: 10 });
+        });
+      }
+
+      function answerQuiz(id, value) {
+        if (quizCard.inert) return;
+        quizAnswers[id] = value;
+        quizStep++;
+        renderQuizStep({ dir: 1 });
+      }
+
+      function quizBack() {
+        if (quizCard.inert || quizStep === 0) return;
+        quizStep--;
+        renderQuizStep({ dir: -1 });
+      }
+
+      function quizResultHTML() {
+        const { formFactor, device, priority } = quizAnswers;
+        const isMac = (device === 'mac' || device === 'apple-mix');
+
+        let rec = {
+          title: 'AirPods Pro 2 (1:1 Flagship)',
+          subtitle: 'best noise cancelling & proven stability',
+          shape: 'pro',
+          modelId: 'pro2',
+          qualityLevel: 'best',
+          price: calcPrice(58),
+          img: 'assets/img/pro2.png',
+          why: [
+            '34+ db active noise cancelling & clean transparency mode',
+            '8 hour battery life on a single charge with usb-c case',
+            'full swipe volume control, lanyard loop & speaker chimes',
+            isMac ? 'seamless switching with macos & ios' : 'rock solid bluetooth connection with all devices'
+          ],
+          alts: [
+            { name: 'AirPods 4 (Open-Fit Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' },
+            { name: 'AirPods Max (Metal Flagship)', price: calcPrice(126), img: 'assets/img/max.png', shape: 'max', modelId: 'max' }
+          ]
+        };
+
+        if (formFactor === 'over-ear') {
+          if (priority === 'budget') {
+            rec = {
+              title: 'AirPods Max (Plastic Build)',
+              subtitle: 'budget over-ear with the full look',
+              shape: 'max',
+              modelId: 'max',
+              qualityLevel: 'good',
+              price: calcPrice(93),
+              img: 'assets/img/max.png',
+              why: [
+                'full over-ear silhouette with working digital crown',
+                'plastic earcups keep the weight light and the cost down',
+                'solid daily audio & spatial audio'
+              ],
+              alts: [
+                { name: 'AirPods Max (Metal Flagship)', price: calcPrice(126), img: 'assets/img/max.png', shape: 'max', modelId: 'max' },
+                { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
+              ]
+            };
+          } else {
+            rec = {
+              title: 'AirPods Max (1:1 Metal Flagship)',
+              subtitle: 'real cold aluminium earcups & heavy luxury feel',
+              shape: 'max',
+              modelId: 'max',
+              qualityLevel: 'best',
+              price: calcPrice(126),
+              img: 'assets/img/max.png',
+              why: [
+                'real cold aluminium earcups with genuine weight',
+                'knit mesh canopy headband & memory foam cushions',
+                'hybrid active noise cancellation & spatial audio',
+                '~50 hours battery life between charges'
+              ],
+              alts: [
+                { name: 'AirPods Max (Plastic Budget)', price: calcPrice(93), img: 'assets/img/max.png', shape: 'max', modelId: 'max' },
+                { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
+              ]
+            };
+          }
+        } else if (formFactor === 'open-fit') {
+          if (priority === 'budget') {
+            rec = {
+              title: 'AirPods 2 (Standard Classic)',
+              subtitle: 'the classic lightweight daily driver',
+              shape: 'gen',
+              modelId: 'gen2',
+              qualityLevel: 'good',
+              price: calcPrice(24),
+              img: 'assets/img/original2.png',
+              why: [
+                'affordable classic stem design that rests comfortably',
+                'no ear fatigue — great for all-day wear & calls',
+                'instant pairing with iphone & long battery life'
+              ],
+              alts: [
+                { name: 'AirPods 4 (1:1 Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' },
+                { name: 'AirPods Pro 2 (Budget Good)', price: calcPrice(22), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
+              ]
+            };
+          } else {
+            rec = {
+              title: 'AirPods 4 (1:1 Flagship ANC)',
+              subtitle: 'latest open-ear design with noise cancellation',
+              shape: 'gen',
+              modelId: 'gen4',
+              qualityLevel: 'best',
+              price: calcPrice(52),
+              img: 'assets/img/original4.png',
+              why: [
+                'newest compact shape fits securely without rubber tips',
+                'active noise cancellation in an open-ear design',
+                'usb-c wireless charging case with speaker chime',
+                'adaptive audio & personalised spatial audio'
+              ],
+              alts: [
+                { name: 'AirPods 2 (Classic)', price: calcPrice(24), img: 'assets/img/original2.png', shape: 'gen', modelId: 'gen2' },
+                { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' }
+              ]
+            };
+          }
+        } else {
+          // in-ear
+          if (priority === 'latest') {
+            rec = {
+              title: 'AirPods Pro 3 (1:1 Flagship)',
+              subtitle: 'newest pro design with optical sensor',
+              shape: 'pro',
+              modelId: 'pro3',
+              qualityLevel: 'best',
+              price: calcPrice(67),
+              img: 'assets/img/pro3.png',
+              why: [
+                'new airpods pro 3 form factor with 1:1 hinge finish',
+                'heart rate sensor simulation & latest gesture controls',
+                'strong active noise cancelling & low latency audio'
+              ],
+              alts: [
+                { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' },
+                { name: 'AirPods 4 (1:1 Flagship)', price: calcPrice(52), img: 'assets/img/original4.png', shape: 'gen', modelId: 'gen4' }
+              ]
+            };
+          } else if (priority === 'budget') {
+            rec = {
+              title: 'AirPods Pro 2 (Budget Good)',
+              subtitle: 'good noise cancelling & punchy sound for less',
+              shape: 'pro',
+              modelId: 'pro2',
+              qualityLevel: 'good',
+              price: calcPrice(22),
+              img: 'assets/img/pro2.png',
+              why: [
+                'good noise cancelation & solid bass for just $' + calcPrice(22) + ' nzd',
+                'silicone tips seal out room noise',
+                'unbeatable price-to-performance entry point'
+              ],
+              alts: [
+                { name: 'AirPods Pro 2 (1:1 Flagship)', price: calcPrice(58), img: 'assets/img/pro2.png', shape: 'pro', modelId: 'pro2' },
+                { name: 'AirPods 2 (Classic)', price: calcPrice(24), img: 'assets/img/original2.png', shape: 'gen', modelId: 'gen2' }
+              ]
+            };
+          }
+        }
+
+        const orderMsg = encodeURIComponent(`ORDER: ${rec.title} for $${rec.price} nzd (recommended from quiz).`);
+        const waUrl = `https://wa.me/491789142763?text=${orderMsg}`;
+
+        const why = rec.why.map((w) => `<li>${ICON_CHECK}<span>${w}</span></li>`).join('');
+        const alts = rec.alts.map((alt) => `
+          <button type="button" class="qr-alt" data-rec="${alt.shape}|${alt.modelId}|best">
+            <span class="qr-alt-media"><img src="${alt.img}" alt=""></span>
+            <span>
+              <span class="qr-alt-name">${alt.name}</span>
+              <span class="qr-alt-price">$${alt.price} nzd</span>
+            </span>
+            <span class="qo-arrow">${ICON_CHEVRON}</span>
+          </button>`).join('');
+
+        return `
+          <div class="qr">
+            <div class="qr-media"><img src="${rec.img}" alt="${rec.title}"></div>
+            <div class="qr-info">
+              <p class="qr-kicker">our pick for you</p>
+              <h3 class="qr-title">${rec.title}</h3>
+              <p class="qr-sub">${rec.subtitle}</p>
+              <div class="qr-price">$${rec.price}<small>nzd shipped</small></div>
+              <ul class="qr-why">${why}</ul>
+              <div class="qr-actions">
+                <a href="${waUrl}" target="_blank" rel="noopener" class="btn btn-wa">order on whatsapp ${ICON_OUT}</a>
+                <button type="button" class="btn btn-secondary" data-rec="${rec.shape}|${rec.modelId}|${rec.qualityLevel}">view in builder</button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="quiz-alts">
-          <div style="grid-column: 1 / -1; font-size:0.8rem; color:var(--text-muted); font-weight:600;">also consider:</div>
-          ${altsHtml}
-        </div>
-
-        <div style="text-align:center; margin-top:20px;">
-          <button class="quiz-back" onclick="openQuiz()" style="font-size:0.85rem;">↺ retake quiz</button>
-        </div>
-      `;
-    }
-
-    function selectQuizRec(shapeKey, modelId, qualityLevel) {
-      closeQuiz();
-      selectShape(shapeKey);
-      selectModel(modelId);
-      const shapeData = inventory[shapeKey];
-      const modelData = shapeData.models.find(m => m.id === modelId);
-      if (modelData) {
-        const item = modelData.qualities.find(q => q.level === qualityLevel) || modelData.qualities[modelData.qualities.length - 1];
-        selectQuality(modelData.name, item);
+          <div class="qr-alts">
+            <p class="qr-alts-label">also consider</p>
+            <div class="qr-alts-grid">${alts}</div>
+          </div>
+          <div class="qr-retake">
+            <button type="button" class="link-btn" data-action="retake">retake quiz</button>
+          </div>`;
       }
-      const res = document.getElementById('step-result');
-      if (res) res.scrollIntoView({ behavior: 'smooth' });
-    }
+
+      function selectQuizRec(shapeKey, modelId, level) {
+        const model = inventory[shapeKey] && inventory[shapeKey].models.find((m) => m.id === modelId);
+        if (!model) return;
+        const item = model.qualities.find((q) => q.level === level) || model.qualities[model.qualities.length - 1];
+        renderModels(shapeKey);
+        renderQualities(model);
+        renderResult(model, item);
+        showStep('step-result', { scroll: false });
+        closeQuiz().then(() => scrollToEl(builder, { onlyIfAbove: false }));
+      }
+
+      quizCard.addEventListener('click', (e) => {
+        const opt = e.target.closest('.quiz-option');
+        if (opt) return answerQuiz(opt.dataset.q, opt.dataset.v);
+        const rec = e.target.closest('[data-rec]');
+        if (rec) return selectQuizRec(...rec.dataset.rec.split('|'));
+        const action = e.target.closest('[data-action]');
+        if (!action) return;
+        if (action.dataset.action === 'quiz-back') quizBack();
+        if (action.dataset.action === 'retake') openQuiz();
+      });
+
+      $('#quiz-open-btn').addEventListener('click', openQuiz);
+      $('#quiz-close-btn').addEventListener('click', () => {
+        closeQuiz();
+        navQuizBtn.focus({ preventScroll: true });
+      });
+      navQuizBtn.addEventListener('click', () => (quizOpen ? closeQuiz() : openQuiz()));
+
+      /* ------------------------------------------------------------------
+         gallery + lightbox
+         ------------------------------------------------------------------ */
+      const lb = $('#lightbox');
+      const lbImg = $('#lb-img');
+      const lbStage = $('#lb-stage');
+      const lbBackdrop = $('.lb-backdrop', lb);
+      const lbChrome = $$('.lb-chrome', lb);
+      const galleryItems = $$('.gallery-item');
+      const srcOf = (i) => { const img = $('img', galleryItems[i]); return img.currentSrc || img.src; };
+      const gal = { index: 0, open: false, token: 0 };
+      let restClip = 'inset(0px 0px 0px 0px round 10px)';
+
+      $('#gallery-count').textContent = `${galleryItems.length} photos`;
+
+      galleryItems.forEach((btn, i) => {
+        btn.setAttribute('aria-label', `open photo ${i + 1} of ${galleryItems.length}`);
+        btn.addEventListener('click', () => openLightbox(i));
+      });
+
+      // scroll reveal
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.filter((e) => e.isIntersecting).forEach((e, i) => {
+            e.target.style.setProperty('--d', `${i * 70}ms`);
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          });
+        }, { rootMargin: '0px 0px -10% 0px' });
+        galleryItems.forEach((el) => io.observe(el));
+      } else {
+        galleryItems.forEach((el) => el.classList.add('is-in'));
+      }
+
+      // geometry that makes the full image look exactly like its cropped thumbnail
+      function thumbPose(thumbBtn) {
+        const prev = lbImg.style.transform;
+        lbImg.style.transform = 'none';
+        const f = lbImg.getBoundingClientRect();
+        lbImg.style.transform = prev;
+        const t = thumbBtn.getBoundingClientRect();
+        if (!t.width || !f.width) return null;
+        const s = Math.max(t.width / f.width, t.height / f.height);
+        const dx = (t.left + t.width / 2) - (f.left + f.width / 2);
+        const dy = (t.top + t.height / 2) - (f.top + f.height / 2);
+        const ix = Math.max(0, (f.width - t.width / s) / 2);
+        const iy = Math.max(0, (f.height - t.height / s) / 2);
+        const r = (parseFloat(getComputedStyle(thumbBtn).borderTopLeftRadius) || 12) / s;
+        return {
+          transform: `translate(${dx}px, ${dy}px) scale(${s})`,
+          clipPath: `inset(${iy}px ${ix}px ${iy}px ${ix}px round ${r}px)`
+        };
+      }
+
+      const inViewport = (el) => {
+        const r = el.getBoundingClientRect();
+        return r.width > 0 && r.bottom > 0 && r.top < window.innerHeight;
+      };
+
+      function updateCounter() {
+        $('#lb-counter').textContent = `${gal.index + 1} / ${galleryItems.length}`;
+        lbImg.alt = $('img', galleryItems[gal.index]).alt;
+      }
+
+      function preloadNeighbours() {
+        const n = galleryItems.length;
+        [gal.index + 1, gal.index - 1].forEach((j) => { new Image().src = srcOf((j + n) % n); });
+      }
+
+      async function openLightbox(i) {
+        if (gal.open) return;
+        gal.open = true;
+        gal.index = i;
+        const token = ++gal.token;
+        const thumbBtn = galleryItems[i];
+
+        lbImg.src = srcOf(i);
+        updateCounter();
+        lb.style.visibility = 'hidden';
+        lb.hidden = false;
+        document.documentElement.classList.add('lb-lock');
+        try { await lbImg.decode(); } catch (_) { /* still show it */ }
+        if (token !== gal.token || !gal.open) return;
+
+        lbImg.style.clipPath = '';
+        restClip = getComputedStyle(lbImg).clipPath;
+        const pose = thumbPose(thumbBtn);
+        lb.style.visibility = '';
+
+        play(lbBackdrop, [{ opacity: 0 }, { opacity: 1 }], { duration: 360 });
+        lbChrome.forEach((el) => play(el, [{ opacity: 0 }, { opacity: 1 }], { duration: 280, delay: 140, fill: 'backwards' }));
+
+        if (pose) {
+          thumbBtn.style.visibility = 'hidden';
+          done(play(lbImg, [pose, { transform: 'none', clipPath: restClip }], { duration: 480 }))
+            .then(() => { if (gal.open) thumbBtn.style.visibility = ''; });
+        } else {
+          play(lbImg, [{ opacity: 0, transform: 'scale(0.96)' }, { opacity: 1, transform: 'none' }], { duration: 320 });
+        }
+
+        $('#lb-close').focus({ preventScroll: true });
+        preloadNeighbours();
+      }
+
+      function closeLightbox() {
+        if (!gal.open) return;
+        gal.open = false;
+        const token = ++gal.token;
+        const thumbBtn = galleryItems[gal.index];
+
+        // pick up from wherever the image currently is (mid-swipe, mid-animation)
+        const cs = getComputedStyle(lbImg);
+        const fromT = cs.transform;
+        const fromO = cs.opacity;
+        const fromClip = cs.clipPath;
+        const backO = getComputedStyle(lbBackdrop).opacity;
+        const chromeO = lbChrome.map((el) => getComputedStyle(el).opacity);
+        [lbImg, lbBackdrop, ...lbChrome].forEach((el) => { stopAll(el); el.style.transform = ''; el.style.opacity = ''; });
+        galleryItems.forEach((b) => { b.style.visibility = ''; });
+
+        let a;
+        const pose = inViewport(thumbBtn) ? thumbPose(thumbBtn) : null;
+        if (pose) {
+          thumbBtn.style.visibility = 'hidden';
+          a = play(lbImg, [{ transform: fromT, opacity: fromO, clipPath: fromClip }, { ...pose, opacity: 1 }],
+            { duration: 400, easing: EASE_OUT, fill: 'forwards' });
+        } else {
+          a = play(lbImg, [{ transform: fromT, opacity: fromO }, { transform: 'scale(0.94)', opacity: 0 }],
+            { duration: 220, easing: EASE_IN, fill: 'forwards' });
+        }
+        play(lbBackdrop, [{ opacity: backO }, { opacity: 0 }], { duration: 340, fill: 'forwards' });
+        lbChrome.forEach((el, k) => play(el, [{ opacity: chromeO[k] }, { opacity: 0 }], { duration: 160, fill: 'forwards' }));
+
+        done(a).then(() => {
+          if (token !== gal.token) return;
+          lb.hidden = true;
+          [lbImg, lbBackdrop, ...lbChrome].forEach(stopAll);
+          thumbBtn.style.visibility = '';
+          document.documentElement.classList.remove('lb-lock');
+          thumbBtn.focus({ preventScroll: true });
+        });
+      }
+
+      async function changeImage(dir) {
+        if (!gal.open) return;
+        const n = galleryItems.length;
+        gal.index = (gal.index + dir + n) % n;
+        const token = ++gal.token;
+        const nextSrc = srcOf(gal.index);
+        updateCounter();
+
+        const pre = new Image();
+        pre.src = nextSrc;
+
+        const cs = getComputedStyle(lbImg);
+        const fromT = cs.transform;
+        const fromO = cs.opacity;
+        stopAll(lbImg);
+        lbImg.style.transform = '';
+        lbImg.style.opacity = '';
+        const out = play(lbImg,
+          [{ transform: fromT, opacity: fromO }, { transform: `translateX(${-dir * 90}px) scale(0.97)`, opacity: 0 }],
+          { duration: 200, easing: EASE_IN, fill: 'forwards' });
+
+        await Promise.all([done(out), pre.decode().catch(() => { })]);
+        if (token !== gal.token || !gal.open) return;
+        lbImg.src = nextSrc;
+        try { await lbImg.decode(); } catch (_) { /* ignore */ }
+        if (token !== gal.token || !gal.open) return;
+
+        stopAll(lbImg);
+        play(lbImg,
+          [{ transform: `translateX(${dir * 90}px) scale(0.97)`, opacity: 0 }, { transform: 'none', opacity: 1 }],
+          { duration: 380 });
+        preloadNeighbours();
+      }
+
+      function springBack() {
+        const cs = getComputedStyle(lbImg);
+        const from = { transform: cs.transform, opacity: cs.opacity };
+        lbImg.style.transform = '';
+        lbImg.style.opacity = '';
+        play(lbImg, [from, { transform: 'none', opacity: 1 }], { duration: 360 });
+        [lbBackdrop, ...lbChrome].forEach((el) => {
+          const o = getComputedStyle(el).opacity;
+          el.style.opacity = '';
+          play(el, [{ opacity: o }, { opacity: 1 }], { duration: 360 });
+        });
+      }
+
+      // swipe left/right to browse, swipe down to dismiss, tap outside to close
+      let drag = null;
+
+      lbStage.addEventListener('pointerdown', (e) => {
+        if (!gal.open || (e.pointerType === 'mouse' && e.button !== 0)) return;
+        drag = { id: e.pointerId, x: e.clientX, y: e.clientY, dx: 0, dy: 0, axis: null, t: performance.now(), onImg: e.target === lbImg };
+        lbStage.setPointerCapture(e.pointerId);
+      });
+
+      lbStage.addEventListener('pointermove', (e) => {
+        if (!drag || e.pointerId !== drag.id) return;
+        drag.dx = e.clientX - drag.x;
+        drag.dy = e.clientY - drag.y;
+        if (!drag.axis && Math.hypot(drag.dx, drag.dy) > 8) {
+          drag.axis = Math.abs(drag.dx) > Math.abs(drag.dy) ? 'x' : 'y';
+          stopAll(lbImg);
+        }
+        if (drag.axis === 'x') {
+          lbImg.style.transform = `translateX(${drag.dx}px)`;
+          lbImg.style.opacity = String(1 - Math.min(Math.abs(drag.dx) / 700, 0.35));
+        } else if (drag.axis === 'y') {
+          const dy = drag.dy > 0 ? drag.dy : drag.dy * 0.2;
+          const p = Math.min(Math.max(dy, 0) / 420, 1);
+          lbImg.style.transform = `translate(${drag.dx * 0.4}px, ${dy}px) scale(${1 - p * 0.22})`;
+          lbBackdrop.style.opacity = String(1 - p * 0.85);
+          lbChrome.forEach((el) => { el.style.opacity = String(1 - Math.min(p * 3, 1)); });
+        }
+      });
+
+      function endDrag(e) {
+        if (!drag || e.pointerId !== drag.id) return;
+        const d = drag;
+        drag = null;
+        const dt = Math.max(performance.now() - d.t, 1);
+        if (!d.axis) {
+          if (e.type === 'pointerup' && !d.onImg) closeLightbox();
+          return;
+        }
+        if (d.axis === 'x' && (Math.abs(d.dx) > 70 || Math.abs(d.dx) / dt > 0.5)) {
+          changeImage(d.dx < 0 ? 1 : -1);
+        } else if (d.axis === 'y' && (d.dy > 110 || d.dy / dt > 0.6)) {
+          closeLightbox();
+        } else {
+          springBack();
+        }
+      }
+      lbStage.addEventListener('pointerup', endDrag);
+      lbStage.addEventListener('pointercancel', endDrag);
+
+      $('#lb-close').addEventListener('click', closeLightbox);
+      $('#lb-prev').addEventListener('click', () => changeImage(-1));
+      $('#lb-next').addEventListener('click', () => changeImage(1));
+
+      window.addEventListener('keydown', (e) => {
+        if (!gal.open) return;
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowLeft') changeImage(-1);
+        else if (e.key === 'ArrowRight') changeImage(1);
+        else if (e.key === 'Tab') {
+          const f = $$('button', lb).filter((b) => b.offsetParent !== null);
+          const i = f.indexOf(document.activeElement);
+          e.preventDefault();
+          f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+        }
+      });
+
+      /* ------------------------------------------------------------------
+         first paint
+         ------------------------------------------------------------------ */
+      staggerIn([quizBanner, ...$$('#step-shape .step-head > *'), ...$$('#step-shape [data-stagger] > *')],
+        { delay: 40, step: 55, y: 12, duration: 600 });
+    })();
   </script>
 </body>
 
